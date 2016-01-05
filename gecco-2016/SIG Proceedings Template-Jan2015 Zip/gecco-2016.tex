@@ -312,13 +312,13 @@ J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
 At last, the Emp-ReducedGAModel is a mix between the two ideias, so it is represented as the Emp-GAModel but its candidates take the same form as the ones in the ReducedGAModel.
 
 %traduzir, pegar coisas do first (passo-a-passo), pq eles e nao outros, o que espero medir
-\section{Tests for evaluating the Earthquake Forecasting Models}\label{Tests}
+\section{Tests for evaluating Models}\label{Tests}
 
 In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
 
 To be able to evalute the data-consistency of the models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
 
-\subsection{Likelihood Test}
+\subsection{Likelihood Test or L-Test}
  
  The L(ikelihood) Test considers that the likelihood value of the model is consistent with the value obtain with the simulations. The value is calculated by the formula, where $\widehat{L}_k$ is the value of the Log-likelihood of the model {\it j}, in the {\it bin} {\it i} and $\widetilde{L}$ is the value of the Log-likelihood of the simulation {\it j} in the {\it bin} {\it q}: 
 
@@ -338,15 +338,21 @@ The analisys of the results can be splited into 3 categories, as follows:
 Its is important to 
 É importante highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.
 
-\subsection{Number test}
-The N(umber)-Test also analises the consistency of the model, but here, it compares the number os observations with the number of events of the simulations. 
+\subsection{Number test or N-Test}
+The N(umber)-Test also analises the consistency of the model, but here, it compares the number os observations with the number of events of the simulations. This test is necessary to supply the underpredicting problem, which may pass unnotecied by the L-Test. 
 
 This mesures is estimated by the fraction of the total number of observations by the total number of observations of the model.
 
 As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor few of them.
 
-This test is necessary to supply the underpredicting problem, which may pass unnotecied by the L-Test. 
+\subsection{Hypotheses Comparison or R-Test}
 
+The Hypotheses Comparison, or the R(atio)-Test, compares two models against themselves. The log-likelihood is calculted for both models and then the difference between, the observed likelihood ratio, this value indicates which one of the model better fits the observations. 
+
+The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.
+
+\subsection{Evaluation}
+If we were to try to define the best performing model, this model must never be rejected in the R-Test and must show data-consistency in the L- and N- Tests. This would be a statement about the model’s performances over the full magnitude range and the entire testing area.
 
 %data, design, comparacao
 \section{Experiments}\label{exp}
@@ -358,7 +364,9 @@ This test is necessary to supply the underpredicting problem, which may pass unn
 
 %ACKNOWLEDGMENTS are optional
 \section{Acknowledgments}
+Bogdan, Zechar, Zhuang
 
+???
 
 %
 % The following two commands are all you need in the
