@@ -1,0 +1,52 @@
+\begin{thebibliography}{1}
+
+\bibitem{ecta14}
+C.~Aranha, Y.~C. Lavinas, M.~Ladeira, and B.~Enescu.
+\newblock Is it possible to generate good earthquake risk models using genetic
+  algorithms?
+\newblock In {\em Proceedings of the International Conference on Evolutionary
+  Computation Theory and Applications}, pages 49--58, 2014.
+
+\bibitem{omori1895after}
+F.~Omori.
+\newblock On the after-shocks of earthquakes.
+\newblock 1895.
+
+\bibitem{schorlemmer2007earthquake}
+D.~Schorlemmer, M.~Gerstenberger, S.~Wiemer, D.~Jackson, and D.~A. Rhoades.
+\newblock Earthquake likelihood model testing.
+\newblock {\em Seismological Research Letters}, 78(1):17--29, 2007.
+
+\bibitem{Schorlemmer2007}
+D.~Schorlemmer, M.~Gerstenberger, S.~Wiemer, D.~Jackson, and D.~A. Rhoades.
+\newblock Earthquake likelihood model testing.
+\newblock {\em Seismological Research Letters}, 78(1):17--29, 2007.
+
+\bibitem{schorlemmer2010first}
+D.~Schorlemmer, J.~D. Zechar, M.~J. Werner, E.~H. Field, D.~D. Jackson, T.~H.
+  Jordan, and R.~W. Group.
+\newblock First results of the regional earthquake likelihood models
+  experiment.
+\newblock {\em Pure and Applied Geophysics}, 167(8-9):859--876, 2010.
+
+\bibitem{utsu1995centenary}
+T.~Utsu and Y.~Ogata.
+\newblock The centenary of the omori formula for a decay law of aftershock
+  activity.
+\newblock {\em Journal of Physics of the Earth}, 43(1):1--33, 1995.
+
+\bibitem{zechar2010evaluating}
+J.~D. Zechar.
+\newblock Evaluating earthquake predictions and earthquake forecasts: A guide
+  for students and new researchers.
+\newblock {\em Community Online Resource for Statistical Seismicity Analysis},
+  pages 1--26, 2010.
+
+\bibitem{zhuang2004analyzing}
+J.~Zhuang, Y.~Ogata, and D.~Vere-Jones.
+\newblock Analyzing earthquake clustering features by using stochastic
+  reconstruction.
+\newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
+  109(B5), 2004.
+
+\end{thebibliography}

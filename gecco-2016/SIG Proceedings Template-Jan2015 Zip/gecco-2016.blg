@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: gecco-2016.aux
+The style file: abbrv.bst
+Database file #1: bib.bib
+Warning--empty journal in omori1895after
+You've used 8 entries,
+            2118 wiz_defined-function locations,
+            546 strings with 5302 characters,
+and the built_in function-call counts, 2901 in all, are:
+= -- 278
+> -- 162
+< -- 2
++ -- 65
+- -- 56
+* -- 221
+:= -- 497
+add.period$ -- 24
+call.type$ -- 8
+change.case$ -- 52
+chr.to.int$ -- 0
+cite$ -- 9
+duplicate$ -- 101
+empty$ -- 202
+format.name$ -- 56
+if$ -- 587
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 8
+newline$ -- 43
+num.names$ -- 16
+pop$ -- 47
+preamble$ -- 1
+purify$ -- 44
+quote$ -- 0
+skip$ -- 74
+stack$ -- 0
+substring$ -- 159
+swap$ -- 20
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 32
+warning$ -- 1
+while$ -- 29
+width$ -- 9
+write$ -- 88
+(There was 1 warning)

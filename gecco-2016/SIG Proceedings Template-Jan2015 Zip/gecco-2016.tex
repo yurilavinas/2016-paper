@@ -1,0 +1,379 @@
+% This is "sig-alternate.tex" V2.1 April 2013
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
+
+\documentclass{sig-alternate-05-2015}
+
+
+\begin{document}
+
+% Copyright
+\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+%\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+
+
+% DOI
+\doi{10.475/123_4}
+
+% ISBN
+\isbn{123-4567-24-567/08/06}
+
+%Conference
+\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+
+\acmPrice{\$15.00}
+
+%
+% --- Author Metadata here ---
+\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+
+\title{Hibridizacao de Modelos de Riscos de Sismos com Tecnicas de Algoritmos Geneticos}
+
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{8} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{1932 Wallamaloo Lane}\\
+       \affaddr{Wallamaloo, New Zealand}\\
+       \email{trovato@corporation.com}
+% 2nd. author
+\alignauthor
+G.K.M. Tobin\titlenote{The secretary disavows
+any knowledge of this author's actions.}\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{P.O. Box 1212}\\
+       \affaddr{Dublin, Ohio 43017-6221}\\
+       \email{webmaster@marysville-ohio.com}
+% 3rd. author
+\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
+one who did all the really hard work.}\\
+       \affaddr{The Th{\o}rv{\"a}ld Group}\\
+       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+       \affaddr{Hekla, Iceland}\\
+       \email{larst@affiliation.org}
+%\and  % use '\and' if you need 'another row' of author names
+%% 4th. author
+%\alignauthor Lawrence P. Leipuner\\
+%       \affaddr{Brookhaven Laboratories}\\
+%       \affaddr{Brookhaven National Lab}\\
+%       \affaddr{P.O. Box 5000}\\
+%       \email{lleipuner@researchlabs.org}
+%% 5th. author
+%\alignauthor Sean Fogarty\\
+%       \affaddr{NASA Ames Research Center}\\
+%       \affaddr{Moffett Field}\\
+%       \affaddr{California 94035}\\
+%       \email{fogartys@amesres.org}
+%% 6th. author
+%\alignauthor Charles Palmer\\
+%       \affaddr{Palmer Research Laboratories}\\
+%       \affaddr{8600 Datapoint Drive}\\
+%       \affaddr{San Antonio, Texas 78229}\\
+%       \email{cpalmer@prl.com}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+\maketitle
+\begin{abstract}
+This project main goal is to refine a method, called the GAModel, by obtaining better accuracy in seismic risk analysis. The GAModel is a model which aims to generate forecasts by using only Evolutionary Computation (EC). % It is based purely on a standard Genetic Algorithm (GA) with real valued genome, where each allele corresponds to a bin in the forecast model. 
+
+This document sumamarizes the GAModel and proposes three extended versions for the GAModel. The first model, ReducedGAModel, is similar to the GAModel, tough it has a different genotype representation. In the GAModel the genotype is related with the fenotype, and in ReducedGAModel the genotype is a version non-related with the fenotype. The second model named as Emp-ReducedGAModel, as the reducedGAModel, uses this new genotype idea and incomporates some emperical laws such as the modified Omori-Utsu formula. The last one, the Emp-GAModel, recovers the genotype-fenotype relation from the GAmodel but also incomporotes the same emperical laws that composes the ReducedGAModel.
+
+These four models were evaluated and compared based on the predictabily experiments framework proposed by the "Collaboratory for the Study of Earthquake Predictability" (CSEP), an international effort to standardize the study and testing of earthquake forecasting models. The experiments were designed to compare 1-year earthquake rate forecasts for four regions in Japan in using the data from the Japan Meteorological Agency (JMA) earthquake catalog.
+
+%The best model was then blablabla smack
+\end{abstract}
+
+
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+% Please copy and paste the code instead of the example below. 
+%
+%\begin{CCSXML}
+%<ccs2012>
+% <concept>
+%  <concept_id>10010520.10010553.10010562</concept_id>
+%  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
+%  <concept_significance>500</concept_significance>
+% </concept>
+% <concept>
+%  <concept_id>10010520.10010575.10010755</concept_id>
+%  <concept_desc>Computer systems organization~Redundancy</concept_desc>
+%  <concept_significance>300</concept_significance>
+% </concept>
+% <concept>
+%  <concept_id>10010520.10010553.10010554</concept_id>
+%  <concept_desc>Computer systems organization~Robotics</concept_desc>
+%  <concept_significance>100</concept_significance>
+% </concept>
+% <concept>
+%  <concept_id>10003033.10003083.10003095</concept_id>
+%  <concept_desc>Networks~Network reliability</concept_desc>
+%  <concept_significance>100</concept_significance>
+% </concept>
+%</ccs2012>  
+%\end{CCSXML}
+
+%\ccsdesc[500]{Computer systems organization~Embedded systems}
+%\ccsdesc[300]{Computer systems organization~Redundancy}
+%\ccsdesc{Computer systems organization~Robotics}
+%\ccsdesc[100]{Networks~Network reliability}
+
+
+%
+% End generated code
+%
+
+%
+%  Use this command to print the description
+%
+\printccsdesc
+
+% We no longer use \terms command
+%\terms{Theory}
+
+\keywords{Evolutionary Computation, Genetic Algorithms, Forecasting, Earthquakes}
+
+
+\section{Introduction}
+Earthquakes may cause soil rupture or movement, tsunamis and more. They may cause great losses and that can be explicit by some examples such as the earthquakes in Tohoku (2011) and Nepal(2015). To be able to minimize the consequences of these events, we look to create forecast earthquake occurences models. Hence the characteristics of the earthquakes may vary both in time and place, these methods should be to adapt their behavior to be able to forecast earthquakes which follows the reality. 
+
+This project aims to obtain a better method, based in improvements to the GAModel~\cite{ecta14}, a statistical method of analysis of earthquakes risk using the Genetic Algorithm technique (GA). Two ideias where taken into account for this. The first, is to change the candidate solution representation. By that, we objective to make the GAModel more specialized, focusing only on areas on which earthquakes happened already.
+
+The other ideia is based on the assumption that earthquakes cluster in both space and time, and the ideia is to apply the Genetic Algorithm technique (GA) with a some empirical laws, such as the modified Omori law. First, the background intensity (the independent earthquakes or mainshock), which is a function of the space, is forecasted using the GA. Then, we use some empirical laws to obtain the dependent earthquakes (aftershock) for a specific time interval.
+
+With this two new ideas, we developed three new methods. We named them as the ReducedGAModel, the Emp-GAModel and the Emp-ReducedGAModel. The first one represents the idea of focusing on areas with occurences. The second one, adds what we call as the domain knowledge, using empirical laws yet to be described, on the section \ref{Models}. The last one, is a mixed between the two ideas, which means that it not has the new representation as it uses the empirical laws as well. 
+
+The models resulted of those methods were analyzed using likelihood tests, namely the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.
+
+For developing the methods and to be able to compare them we used the earthquake catalog from the Japanese Meteorological Agency (JMA), using event data from 2005 to 2010.  
+
+This paper is organized as: in section \ref{Models}, we give a details of each of the forecast proposed covering the Collaboratory for the Study of Earthquake Predictability (CSEP) framework and the empirical laws. In section \ref{Tests}, we give the description of the tests proposed in~\cite{Schorlemmer2007}. After that, in \ref{exp}, we define the target areas used for the experiment and the data from the JMA; we clarify the design followed during the experiments and how ew compared the models derived from our methods. Finally, we show the results and conclude this work in~\ref{Results} and \ref{Conclusions}.
+
+
+%TODO: citar as equacoes (utsu e etas). citar omori law, arrumar as equacoes, descrever os bins, o gamodel, explicar a nova versao e motivacao, explicar as equacoes em detalhes aqui tá muito intro 
+\section{Models}\label{Models}
+In the Collaboratory for the Study of Earthquake Predictability (CSEP) framework, a forecast uses one common format which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date, is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
+
+Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
+
+\subsection{Mainshock Models}
+The GAModel is purely based on the framework suggested by the CSEP. In it, one forecast is defined as a place for a specfic time and is divided in bins. Each bin represents a geographical interval. The whole target area of study is covered by these bins and represents the $\mu(x,y)$, the background intensity~\cite{zhuang2004analyzing}. In the GAModel, each possible solution is represented as an entire forecast model.
+
+In this context the GAModel is considered as one method to generate space-rate-time forecasts. It also could be described as:
+
+\begin{equation}\label{gamodel}
+ \lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)
+\end{equation}
+
+where you can denote the number of earthquakes forecast in a bin as $\lambda(t,x,y)$~\cite{zechar2010evaluating} given that $\Upsilon_t$ is the earthquake observation data up to time $t$.% Which leads to $\mu(x,y)$ the background intensity, a function of space, but not of time~\cite{zhuang2004analyzing}.
+
+The ReducedGAModel, which represents the first ideia, is a method described as the GAModel, but each possible solution represents a fraction of the forecast where we expect to find especific risk areas. The GAModel defines a expected number of earthquakes for every single bin in the target region. That could lead to exhaustive and, sometimes worthless, searches. That is caused by the number of bins in the forecast and also because some in some bins there are no earthquake occurances in the observation data. To minimize this, the ReducedGAModel only define expected number of earthquakes in bins that already had some occurance in the past, giving some sort of guideline to the GA. 
+
+To make it clear, we use the same example as the one used in ~\cite{ecta14}.The "Kanto" region, one of the four areas used in this study, is divided into 2025 bins (a grid of 45x45 squares). Each bin has an area of approximately 25km2 (Figure ??). The GAModel then calculates an expected number of earthquakes for every bin on a determinated time interval, so the GA searches for good values in 2025 bins. 
+
+The ReducedGAModel will first obtain the position of past occurances and will calculate some expected number of earthquakes for only the bins related to those positions. For example, if there are 10 bins with occurances in Kanto in the last year, it will make the GA search good values for only those 10 bins, leaving the other 2015 bins with the value zero, representing zero occurances. It is important to highlight that in the worst case, it will make the same amount of searches as the GAModel.
+
+% (it is possible that an bin had more the one occurance, therefore that number will drop. 
+
+\subsection{Mainshock+Aftershock Models}
+Hence earthquakes cluster in space and inspired by the space-time epidemic-type aftershock sequence (ETAS), the Emp-GAModel, represents the second ideia and is described as:
+
+\begin{equation}\label{reducedgamodel}
+	\lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)J(M)
+\end{equation}
+
+adicionar RI nanjo no lugar da F
+\begin{equation}\label{emp-model}
+ \lambda(t,x,y|\Upsilon_t) = \mu(x,y) + \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)F
+\end{equation}
+%TODO: explicar o Upsilon
+
+The Emp-GAModel uses $\mu(x,y)$ as defined for the GAModel, so it calculates an expected number of earthquakes for every bin in the target region. The Omori law, $g(t)$, which is considered one empirical formula of great success~\cite{zhuang2004analyzing}~\cite{utsu1995centenary}~\cite{omori1895after}, is a power law that relates the earthquake occurance and its magnitude with the decay of aftershocks activity with time. For this approach we used the probabilty density function (pdf) form of the modifed Omori law\cite{zhuang2004analyzing}:
+
+\begin{equation}\label{omori}
+	g(t)= \dfrac{(p-1)}{c(1+ \dfrac{t}{c})^(-p)}
+\end{equation}
+
+For $K(M_i)$, the total amount of triggered events, we count aftershocks within a calculated aftershock area using the formula, where $M_c$ is the magnitude threshold:
+
+\begin{equation}\label{triggered}
+ K(M_i) = A\ exp([\alpha(M-M_c)])
+\end{equation}
+
+and lastly, the $J(M)$ is a simulation of the event  magnitude by Gutenberg-Richter's Law:
+
+\begin{equation}\label{gut-ritcher}
+J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
+\end{equation}
+
+At last, the Emp-ReducedGAModel is a mix between the two ideias, so it is represented as the Emp-GAModel but its candidates take the same form as the ones in the ReducedGAModel.
+
+%traduzir, pegar coisas do first (passo-a-passo), pq eles e nao outros, o que espero medir
+\section{Tests for evaluating the Earthquake Forecasting Models}\label{Tests}
+
+In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
+
+To be able to evalute the data-consistency of the models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
+
+\subsection{Likelihood Test}
+ 
+ The L(ikelihood) Test considers that the likelihood value of the model is consistent with the value obtain with the simulations. The value is calculated by the formula, where $\widehat{L}_k$ is the value of the Log-likelihood of the model {\it j}, in the {\it bin} {\it i} and $\widetilde{L}$ is the value of the Log-likelihood of the simulation {\it j} in the {\it bin} {\it q}: 
+
+
+\begin{equation}
+\gamma^{j}_{q} = \frac{\left| \left\{ \widehat{L}^j_k | \widehat{L}^j_k \leq \widetilde{L}^j_q, \widehat{L}^j_k \in \widehat{L}^j, \widetilde{L}^j_q \in \widetilde{L}^j  \right\} \right|}  {|\widehat{L}^j|}
+\end{equation}
+
+The analisys of the results can be splited into 3 categories, as follows:
+
+\begin{enumerate}
+\item Case 1: $\gamma^{j}$ is a low value, or in other words, the Log-likelihood of the model is lower then most of the Log-likelihood of the simulations. In this case, the model is rejected.
+\item Case 2: $\gamma^{j}$ falls near the half of the values obtained from the simluations and is consistent with the data.
+\item Case 3: $\gamma^{j}$ is high. This means that the Log-likelihood of the data da is higher that the Log-likelihood of the model and no conclusion can be made what so ever.
+\end{enumerate}
+
+Its is important to 
+É importante highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.
+
+\subsection{Number test}
+The N(umber)-Test also analises the consistency of the model, but here, it compares the number os observations with the number of events of the simulations. 
+
+This mesures is estimated by the fraction of the total number of observations by the total number of observations of the model.
+
+As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor few of them.
+
+This test is necessary to supply the underpredicting problem, which may pass unnotecied by the L-Test. 
+
+
+%data, design, comparacao
+\section{Experiments}\label{exp}
+
+\section{Results}\label{Results}
+
+\section{Conclusions}\label{Conclusions}
+%\end{document}  % This is where a 'short' article might terminate
+
+%ACKNOWLEDGMENTS are optional
+\section{Acknowledgments}
+
+
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+\bibliographystyle{abbrv}
+\bibliography{bib}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+
+\end{document}

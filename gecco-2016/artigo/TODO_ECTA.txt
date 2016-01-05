@@ -1,0 +1,35 @@
+Changes and comments on the ECTA paper
+
+* Mudancas que eu queria comentarios
+
+- Como o revisor 6 pediu, adicionei 2 paragrafos na secao 1 comentando a diferenca entre "predicao" e "forecast". Me digam o que voces acharam dos novos paragrafos, e tracem comentarios se quiserem.
+- O revisor 1 fez varias sugestoes de novos metodos, e o revisor 5 reclamou que "novos metodos nao foram usados". Adicionei na ultima secao (conclusion) um lembrete de que nao queremos usar novos metodos neste artigo, e uma lista de sugestoes de novos metodos (incluindo aqueles do revisor 1)
+
+* Mudancas complicadas
+
+- O revisor 1 pediu que as imagens de modelos de terremotos fossem colocadas todas na mesma escala. Eu entendo o comentario dele, mas estou tendo dificuldades de ver como isto deveria ser feito. Voces acham isto muito importante?
+
+- O revisor 2 sugeriu remover os resultados aleatorios, o revisor 1 sugerio fazer 10 repeticoes dos resultados aleatorios. Por enquanto vou deixar como esta.
+
+- O revisor 5 pediu "estatisticas do tempo de execucao do algoritmo" -- eu tenho isso, mas sinceramente acho que nao faz sentido nenhum incuir isso, dado que nao estamos propondo um metodo novo... o que voces acham? Outros revisores nao comentaram.
+
+- O revisor 5 pedium "mais informacoes" sobre a complexidade do metodo, e sobre os metodos experimentais. Eu acho que inclui bastante coisa, mas se voces acham que tem mais coisas que podem ser inclusas, me deem ideias (lembrando o problema do espaco)
+
+* Coisas a fazer: 
+- Eu nao encontrei o meu caderno de resultados temporarios. Eu ainda tenho os dados originais dos experimentos, entao da para recalcular os dois valores de erros que estao faltando, mas eles nao estao nesta versao do artigo. Coisa para se aprender: Nao apague tabelas temporarias de resultados so porque voce ja passou ela para o artigo - nunca se sabe quando um erro de digitacao vai fazer voce perder dados!
+
+
+--> Recomendacoes uteis do revisor 6
+--> Nao temos espaco para isto neste paper, mas deve ser levado em conta no futuro, quando formos fazer um journal paper.
+
+recommends, "that predictions should be formulated in terms of
+probability, i.e. the expectation in the time-space-magnitude domain,
+of the occurrence of an earthquake". Moreover, the authors should
+aware the reader about the advantages and disadvantages of the RI
+algorithm. For instance, that it produces a relatively high false
+positive rate. Moreover, the choice of threshold and grid size is
+critical to its performance. Also, the method is sensitive to the
+quality of the data, as it intrinsically relies on forecasting events
+where high rates of activity have occurred in the past. As a result,
+areas that have been quiescent for long periods will result in false
+negatives, or misses, in intermediate term forecasts.
