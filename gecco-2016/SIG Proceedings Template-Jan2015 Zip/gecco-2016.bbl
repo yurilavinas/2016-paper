@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{ecta14}
 C.~Aranha, Y.~C. Lavinas, M.~Ladeira, and B.~Enescu.
@@ -6,6 +6,11 @@ C.~Aranha, Y.~C. Lavinas, M.~Ladeira, and B.~Enescu.
   algorithms?
 \newblock In {\em Proceedings of the International Conference on Evolutionary
   Computation Theory and Applications}, pages 49--58, 2014.
+
+\bibitem{ogata2006space}
+Y.~Ogata and J.~Zhuang.
+\newblock Space--time etas models and an improved extension.
+\newblock {\em Tectonophysics}, 413(1):13--23, 2006.
 
 \bibitem{omori1895after}
 F.~Omori.
@@ -34,6 +39,12 @@ T.~Utsu and Y.~Ogata.
 \newblock The centenary of the omori formula for a decay law of aftershock
   activity.
 \newblock {\em Journal of Physics of the Earth}, 43(1):1--33, 1995.
+
+\bibitem{yamanaka1990scaling}
+Y.~Yamanaka and K.~Shimazaki.
+\newblock Scaling relationship between the number of aftershocks and the size
+  of the main shock.
+\newblock {\em Journal of Physics of the Earth}, 38(4):305--324, 1990.
 
 \bibitem{zechar2010evaluating}
 J.~D. Zechar.

@@ -297,10 +297,18 @@ The Emp-GAModel uses $\mu(x,y)$ as defined for the GAModel, so it calculates an 
 	g(t)= \dfrac{(p-1)}{c(1+ \dfrac{t}{c})^(-p)}
 \end{equation}
 
-For $K(M_i)$, the total amount of triggered events, we count aftershocks within a calculated aftershock area using the formula, where $M_c$ is the magnitude threshold:
+In the paper~\cite{utsu1995centenary}, Utsu says that most p and c values, for various earthquake data sets fall in the range between 0.9 and 1.4, and between 0.003 and 0.3 days, respectively. These values were based on the Davidon-Fletcher-Powell optimization procedure and used in ETAS. For the experiments done for this paper, we choose the values of p and c as 1 and c, arbitrarily.
+
+For $K(M_i)$, the total amount of triggered events, we count aftershocks within a calculated aftershock area, A, using the formula, where $M_c$ is the magnitude threshold:
 
 \begin{equation}\label{triggered}
  K(M_i) = A\ exp([\alpha(M-M_c)])
+\end{equation}
+
+From~\cite{ogata2006space}, states alpha as the inverse of the magnitude of an event, or $magnitide^-1$. To obtain A, the following equation was used, from~\cite{yamanaka1990scaling}:
+
+\begin{equation}
+A = e^{(1.02*M -4)}
 \end{equation}
 
 and lastly, the $J(M)$ is a simulation of the event  magnitude by Gutenberg-Richter's Law:
@@ -316,7 +324,9 @@ At last, the Emp-ReducedGAModel is a mix between the two ideias, so it is repres
 
 In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
 
-To be able to evalute the data-consistency of the models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
+To evalute the data-consistency of the models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
+
+To be able to compare the model that passed the N-Test and the L-test, the R-Test, hypotheses Comparison Test is used. It calculates the relative performance of a model, by comparing the Log-likelihood values between two models.
 
 \subsection{Likelihood Test or L-Test}
  
@@ -335,8 +345,8 @@ The analisys of the results can be splited into 3 categories, as follows:
 \item Case 3: $\gamma^{j}$ is high. This means that the Log-likelihood of the data da is higher that the Log-likelihood of the model and no conclusion can be made what so ever.
 \end{enumerate}
 
-Its is important to 
-É importante highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.
+
+It is important to highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.
 
 \subsection{Number test or N-Test}
 The N(umber)-Test also analises the consistency of the model, but here, it compares the number os observations with the number of events of the simulations. This test is necessary to supply the underpredicting problem, which may pass unnotecied by the L-Test. 
@@ -345,14 +355,15 @@ This mesures is estimated by the fraction of the total number of observations by
 
 As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor few of them.
 
-\subsection{Hypotheses Comparison or R-Test}
+\subsection{Hypotheses Comparison Test or R-Test}
 
 The Hypotheses Comparison, or the R(atio)-Test, compares two models against themselves. The log-likelihood is calculted for both models and then the difference between, the observed likelihood ratio, this value indicates which one of the model better fits the observations. 
 
 The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.
 
+%this is not mine
 \subsection{Evaluation}
-If we were to try to define the best performing model, this model must never be rejected in the R-Test and must show data-consistency in the L- and N- Tests. This would be a statement about the model’s performances over the full magnitude range and the entire testing area.
+The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model\cite{schorlemmer2007earthquake}.
 
 %data, design, comparacao
 \section{Experiments}\label{exp}
