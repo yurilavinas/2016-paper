@@ -291,27 +291,27 @@ adicionar RI nanjo no lugar da F
 \end{equation}
 %TODO: explicar o Upsilon
 
-The Emp-GAModel uses $\mu(x,y)$ as defined for the GAModel, so it calculates an expected number of earthquakes for every bin in the target region. The Omori law, $g(t)$, which is considered one empirical formula of great success~\cite{zhuang2004analyzing}~\cite{utsu1995centenary}~\cite{omori1895after}, is a power law that relates the earthquake occurance and its magnitude with the decay of aftershocks activity with time. For this approach we used the probabilty density function (pdf) form of the modifed Omori law\cite{zhuang2004analyzing}:
+The Emp-GAModel uses $\mu(x,y)$ as defined for the GAModel, so it calculates an expected number of earthquakes for every bin in the target region. The Omori law, $g(t)$, which is considered one empirical formula of great success~\cite{zhuang2004analyzing}~\cite{utsu1995centenary}~\cite{omori1895after}, is a power law that relates the earthquake occurance and its magnitude with the decay of aftershocks activity with time. For this approach we used the probabilty density function (pdf) form of the modifed Omori law~\cite{zhuang2004analyzing}:
 
 \begin{equation}\label{omori}
 	g(t)= \dfrac{(p-1)}{c(1+ \dfrac{t}{c})^(-p)}
 \end{equation}
 
-In the paper~\cite{utsu1995centenary}, Utsu says that most p and c values, for various earthquake data sets fall in the range between 0.9 and 1.4, and between 0.003 and 0.3 days, respectively. These values were based on the Davidon-Fletcher-Powell optimization procedure and used in ETAS. For the experiments done for this paper, we choose the values of p and c as 1 and c, arbitrarily.
+In the paper~\cite{utsu1995centenary}, Utsu says that most p and c values, for various earthquake data sets fall in the range between 0.9 and 1.4, and between 0.003 and 0.3 days, respectively. These values were based on the Davidon-Fletcher-Powell optimization procedure and used in ETAS~\cite{utsu1995centenary}. For the experiments done for this paper, we choose the values of $1.1$ for $p$ and $0.003$ for $c$, arbitrarily.
 
-For $K(M_i)$, the total amount of triggered events, we count aftershocks within a calculated aftershock area, A, using the formula, where $M_c$ is the magnitude threshold:
+For $K(M_i)$, the total amount of triggered events, we count aftershocks within a calculated aftershock area, $A$, using the formula, where $M_c$ is the magnitude threshold:
 
 \begin{equation}\label{triggered}
  K(M_i) = A\ exp([\alpha(M-M_c)])
 \end{equation}
 
-From~\cite{ogata2006space}, states alpha as the inverse of the magnitude of an event, or $magnitide^-1$. To obtain A, the following equation was used, from~\cite{yamanaka1990scaling}:
+From~\cite{ogata2006space}, states alpha as the inverse of the magnitude of an event, or $magnitide^{-1}$. To obtain A, the following equation from~\cite{yamanaka1990scaling}, was used:
 
 \begin{equation}
-A = e^{(1.02*M -4)}
+A = e^{(1.02M -4)}
 \end{equation}
 
-and lastly, the $J(M)$ is a simulation of the event  magnitude by Gutenberg-Richter's Law:
+and lastly, the $J(M)$ is a simulation of the event  magnitude by Gutenberg-Richter's Law, using $1$ as the value of $\beta$ ~\cite{helmstetter2003predictability}:
 
 \begin{equation}\label{gut-ritcher}
 J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
@@ -367,7 +367,14 @@ The evaluation process is made as follow: First, the data-consitency is tested b
 
 %data, design, comparacao
 \section{Experiments}\label{exp}
+%Tuned configuration: A parameter configuration tuned for the smaller budget of 500 evaluations used in this experiment. The tuned parameter values for each algorithm were calculated using the Sequential Model-based Algorithm Configuration method (SMAC) [7].
 
+%All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. An algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by repeatedly generating a candidate config- uration (e.g., by local search) and evaluating the configuration on the set of the training instances (or some intelligently selected subset of training instances). The configuration with highest expected utility on the training set is returned. SMAC can be used to tune real-valued, integer-valued, categorical, and conditional parameters [7].2
+\subsection{Parameter Tuning}
+pysmac, smac
+pySMAC, a Python wrapper for the hyperparameter optimization tool SMAC
+5 https://github.com/automl/pysmac
+v\
 \section{Results}\label{Results}
 
 \section{Conclusions}\label{Conclusions}
