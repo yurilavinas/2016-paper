@@ -179,7 +179,7 @@ This project main goal is to refine a method, called the GAModel, by obtaining b
 
 This document sumamarizes the GAModel and proposes three extended versions for the GAModel. The first model, ReducedGAModel, is similar to the GAModel, tough it has a different genotype representation. In the GAModel the genotype is related with the fenotype, and in ReducedGAModel the genotype is a version non-related with the fenotype. The second model named as Emp-ReducedGAModel, as the reducedGAModel, uses this new genotype idea and incomporates some emperical laws such as the modified Omori-Utsu formula. The last one, the Emp-GAModel, recovers the genotype-fenotype relation from the GAmodel but also incomporotes the same emperical laws that composes the ReducedGAModel.
 
-These four models were evaluated and compared based on the predictabily experiments framework proposed by the "Collaboratory for the Study of Earthquake Predictability" (CSEP), an international effort to standardize the study and testing of earthquake forecasting models. The experiments were designed to compare 1-year earthquake rate forecasts for four regions in Japan in using the data from the Japan Meteorological Agency (JMA) earthquake catalog.
+These four forecast models were evaluated and compared based on the predictabily experiments framework proposed by the "Collaboratory for the Study of Earthquake Predictability" (CSEP), an international effort to standardize the study and testing of earthquake forecasting models. The experiments were designed to compare 1-year earthquake rate forecasts for four regions in Japan in using the data from the Japan Meteorological Agency (JMA) earthquake catalog.
 
 %The best model was then blablabla smack
 \end{abstract}
@@ -245,11 +245,11 @@ The other ideia is based on the assumption that earthquakes cluster in both spac
 
 With this two new ideas, we developed three new methods. We named them as the ReducedGAModel, the Emp-GAModel and the Emp-ReducedGAModel. The first one represents the idea of focusing on areas with occurences. The second one, adds what we call as the domain knowledge, using empirical laws yet to be described, on the section \ref{Models}. The last one, is a mixed between the two ideas, which means that it not has the new representation as it uses the empirical laws as well. 
 
-The models resulted of those methods were analyzed using likelihood tests, namely the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.
+The forecast models resulted of those methods were analyzed using likelihood tests, namely the L-test, the N-test and the R-test, as suggested by Regional Earthquake Likelihood Model (RELM)~\cite{schorlemmer2007earthquake}.
 
 For developing the methods and to be able to compare them we used the earthquake catalog from the Japanese Meteorological Agency (JMA), using event data from 2005 to 2010.  
 
-This paper is organized as: in section \ref{Models}, we give a details of each of the forecast proposed covering the Collaboratory for the Study of Earthquake Predictability (CSEP) framework and the empirical laws. In section \ref{Tests}, we give the description of the tests proposed in~\cite{Schorlemmer2007}. After that, in \ref{exp}, we define the target areas used for the experiment and the data from the JMA; we clarify the design followed during the experiments and how ew compared the models derived from our methods. Finally, we show the results and conclude this work in~\ref{Results} and \ref{Conclusions}.
+This paper is organized as: in section \ref{Models}, we give a details of each of the forecast proposed covering the Collaboratory for the Study of Earthquake Predictability (CSEP) framework and the empirical laws. In section \ref{Tests}, we give the description of the tests proposed in~\cite{Schorlemmer2007}. After that, in \ref{exp}, we define the target areas used for the experiment and the data from the JMA; we clarify the design followed during the experiments and how ew compared the forecast models derived from our methods. Finally, we show the results and conclude this work in~\ref{Results} and \ref{Conclusions}.
 
 
 %TODO: descrever os bins, o gamodel, explicar a nova versao e motivacao, explicar as equacoes em detalhes aqui tá muito intro 
@@ -257,7 +257,7 @@ This paper is organized as: in section \ref{Models}, we give a details of each o
 \section{1-year Models}\label{Models}
 In the Collaboratory for the Study of Earthquake Predictability (CSEP) framework, a forecast uses one common format which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date, is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
 
-Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
+Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the forecast models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
 
 \subsection{Genome Representation}
 The GAModel each individual represents an entire forecast model~\cite{ecta14}. For the ReducedGAModel and each individual represents a subarea of the forecast model. This subarea is related to earthquakes past events locations only, so the genome size is usually smaller than the one used in the GAModel and the Emp-GAModel. 
@@ -383,11 +383,11 @@ At last, the Emp-ReducedGAModel is a mix between the two ideias, so it is repres
 %traduzir, pegar coisas do first (passo-a-passo), pq eles e nao outros, o que espero medir
 \section{Tests for evaluating Models}\label{Tests}
 
-In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
+In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the forecast models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
 
-To evalute the data-consistency of the models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
+To evalute the data-consistency of the forecast models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
 
-To be able to compare the model that passed the N-Test and the L-test, the R-Test, hypotheses Comparison Test is used. It calculates the relative performance of a model, by comparing the Log-likelihood values between two models.
+To be able to compare the model that passed the N-Test and the L-test, the R-Test, hypotheses Comparison Test is used. It calculates the relative performance of a model, by comparing the Log-likelihood values between two forecast models.
 
 \subsection{Likelihood Test or L-Test}
  
@@ -418,19 +418,18 @@ As the L-test, if the number of events falls near the half of the values of the 
 
 \subsection{Hypotheses Comparison Test or R-Test}
 
-The Hypotheses Comparison, or the R(atio)-Test, compares two models against themselves. The log-likelihood is calculted for both models and then the difference between, the observed likelihood ratio, this value indicates which one of the model better fits the observations. 
+The Hypotheses Comparison, or the R(atio)-Test, compares two forecast models against themselves. The log-likelihood is calculted for both models and then the difference between, the observed likelihood ratio, this value indicates which one of the model better fits the observations. 
 
 The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.
 
 
 \subsection{Evaluation}\label{eval}
-The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.
+The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other forecast models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.
 
 %data, design, comparacao, regions, year(s)
 %para o só ga ,boxplot e t-test tem que ver se tem vantagem
 %para com equations usar os testes
 \section{Experiments}\label{exp}
-data, design, comparacao, regions, year(s)
 %Tuned configuration: A parameter configuration tuned for the smaller budget of 500 evaluations used in this experiment. The tuned parameter values for each algorithm were calculated using the Sequential Model-based Algorithm Configuration method (SMAC) [7].
 
 To analyze the performance of the forecasts generated by the GAModel, the ReducedGAModel, the Emp-GAModel and finally the Emp-ReducedGAModel, we used the evalution method proposed by~\cite{schorlemmer2007earthquake} and described in section~\ref{eval}.
@@ -453,10 +452,17 @@ For the experiments we consider events with magnitude above 5.0 which happened i
 %East Japan: This area corresponds to Japan’s north-eastern coast. It includes both inland and off-shore events, which makes it more difficult to forecast. It also includes the location of the M9 earthquake of 2011. We define this region as starting at N37,W140, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 10km2 square.
 
 %All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. An algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by repeatedly generating a candidate config- uration (e.g., by local search) and evaluating the configuration on the set of the training instances (or some intelligently selected subset of training instances). The configuration with highest expected utility on the training set is returned. SMAC can be used to tune real-valued, integer-valued, categorical, and conditional parameters [7].2
+%TODO: describe the scenarios
 \subsection{Experimental Design}
+To compare the performance of the forecast models, we execute a simulation experiment on ??? scenarios. Each scneario is defined by a region for a 1-year interval, starting in Jan/01 and endding in Dec/31. To build one scenario, one region is chosen from the set of regions (Kanto, Tohoku, East Japan and Kansai) for a determinated year. To train the methods, we use 5 years of prior data, for example, to train the 2010 1-year GAModel Kanto region, the data used is from the events which occurred in the years of 2006, 2007, 2008 and 2009 in Kanto.
 
+To The results of the forecasts io, we used two approaches. The first one is based on the evaluation method proposed by~\cite{Schorlemmer2007} and used in~\cite{schorlemmer2010first}. As described in~\ref{eval}, the forecasts were first analysed using the L- and N- test and ??????  was chosen by the R-test as the recommended one.
 
-\subsubsection{Parameter Tuning}
+The second approach is to using the Log-likelihood values obtained by each of the forecast for each scenario. The log likelihood indicates how close the forecast is to the test data, in terms of location and quantity of earthquakes~\cite{ecta14}.
+
+All forecast models here presented are stochastic methods. Therefore, to be able to compare test the statistical significance of the results, we run each forecast model 10 times. That means that all results showed are the mean of these 10 executions.
+
+\subsection{Parameter Tuning}
 pysmac, smac
 pySMAC, a Python wrapper for the hyperparameter optimization tool SMAC
 5 https://github.com/automl/pysmac
