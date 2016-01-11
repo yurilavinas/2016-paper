@@ -237,7 +237,7 @@ These four models were evaluated and compared based on the predictabily experime
 \keywords{Evolutionary Computation, Genetic Algorithms, Forecasting, Earthquakes}
 
 
-\section{Introduction}
+\section{Introduction}\label{intro}
 Earthquakes may cause soil rupture or movement, tsunamis and more. They may cause great losses and that can be explicit by some examples such as the earthquakes in Tohoku (2011) and Nepal(2015). To be able to minimize the consequences of these events, we look to create forecast earthquake occurences models. Hence the characteristics of the earthquakes may vary both in time and place, these methods should be to adapt their behavior to be able to forecast earthquakes which follows the reality. 
 
 This project aims to obtain a better method, based in improvements to the GAModel~\cite{ecta14}, a statistical method of analysis of earthquakes risk using the Genetic Algorithm technique (GA). Two ideias where taken into account for this. The first, is to change the candidate solution representation. By that, we objective to make the GAModel more specialized, focusing only on areas on which earthquakes happened already.
@@ -253,11 +253,103 @@ For developing the methods and to be able to compare them we used the earthquake
 This paper is organized as: in section \ref{Models}, we give a details of each of the forecast proposed covering the Collaboratory for the Study of Earthquake Predictability (CSEP) framework and the empirical laws. In section \ref{Tests}, we give the description of the tests proposed in~\cite{Schorlemmer2007}. After that, in \ref{exp}, we define the target areas used for the experiment and the data from the JMA; we clarify the design followed during the experiments and how ew compared the models derived from our methods. Finally, we show the results and conclude this work in~\ref{Results} and \ref{Conclusions}.
 
 
-%TODO: citar as equacoes (utsu e etas). citar omori law, arrumar as equacoes, descrever os bins, o gamodel, explicar a nova versao e motivacao, explicar as equacoes em detalhes aqui tá muito intro 
-\section{Models}\label{Models}
+%TODO: descrever os bins, o gamodel, explicar a nova versao e motivacao, explicar as equacoes em detalhes aqui tá muito intro 
+%TODO: genoma, o que tem no bin, funcao de fitness, operators and parameters
+\section{1-year Models}\label{Models}
 In the Collaboratory for the Study of Earthquake Predictability (CSEP) framework, a forecast uses one common format which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date, is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
 
 Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
+
+\subsection{Genome Representation}
+The GAModel each individual represents an entire forecast model~\cite{ecta14}. For the ReducedGAModel and each individual represents a subarea of the forecast model. This subarea is related to earthquakes past events locations only, so the genome size is usually smaller than the one used in the GAModel and the Emp-GAModel. 
+
+The Emp-ReducedGAModel and the Emp-GAModel are only different from the ReducedGAmodel and from the GAmodel, respectively, by the use of equations after the forecast is provided. This means that the theirs genome representation are the same as the GAModel and the ReducedGAModel,correspondingly.
+
+For all methods, the genome is a real valued array X, where each element corresponds to one bin in the desired model (the number of bins n is defined by the problem). Each element $x_i \in X$ takes a value from $[0,1)$. In the initial population, these values are sampled from a uniform distribution. For more details of the genome represatation, please refer to~\cite{ecta14}.
+\subsection{Fitness Function}
+For the fitness function we used the log-likelihood value. The fittest individual among all the others, is preserved in the next generation, to make the solution of one generation as good as the its last generation.
+The bins, a gene (a element) of the genome representation, $b_n$, define the set $\beta$ and $n$ is the size of the set $\beta$:
+
+				\begin{equation} 
+					\beta := {b_1,b_2,...,b_n},n = |\beta|
+				\end{equation}
+
+The probability values of the model $j$,  expressed by the symbol $\Lambda$, is made of expectations $\lambda_i^j$ by  bin $b_i$. The vector is define as:
+				
+\begin{equation}
+	\Lambda^j = 
+\begin{pmatrix}
+    \lambda_1^j, 
+    \lambda_2^j, 
+    \hdots,
+    \lambda_i^j
+  \end{pmatrix}
+  ;\lambda_i^j := \lambda_i^j(b_i),b_i \in \beta
+\end{equation}
+		
+The vector of earthquake quantity expectations is defined as: earthquake by time. The $\Omega$ vector é composed by observations $\omega_i$ per bin  $b_i$, as the  $\Lambda$ vector:
+
+\begin{equation}
+\Omega = 
+\begin{pmatrix}
+    \omega_1,
+    \omega_2,
+    \hdots,
+    \omega_i
+  \end{pmatrix}
+  ;\omega_i =\omega_i(b_i),b_i \in \beta
+\end{equation}
+
+%We assume that the each earthquake is independent from each other. The likelihood value of the observations $\omega$ in a bin with $\lambda$ expectation is given by the Poissonian probability $p$:
+%		
+%
+%\begin{equation}
+%	p(\omega|\lambda) = \frac{\lambda^\omega}{\omega!}e^{-\lambda} 
+%\end{equation}
+%	%p(\omega|\lambda) = \frac{\lambda^\omega}{\omega!}e^{-\lambda} 
+%
+%For the $\lambda = 0$ : 
+%	
+%\begin{equation}
+%	p(\omega|0) = \left\{
+%  \begin{array}{lr}
+%    1 & , \omega=0\\
+%    0 & , \omega>0
+%  \end{array}
+%\right.
+%\end{equation}
+
+The calculation of the log-likelihood value for the  $\omega_i$ observation with a given expectation $\lambda$ is defined as:
+
+
+\begin{equation}
+	L(\omega_i|\lambda_i^j) = -\lambda_i^j + \omega_i\log\lambda_i^j - \log\omega_i!
+\end{equation}
+
+%To apply the logarithm for the probabilities $p$ with $\lambda = 0$, we have:
+%
+%\begin{equation}
+%	L(\omega|0) = \left\{
+%  \begin{array}{lr}
+%    1 & , \omega>0\\
+%    -\infty & , \omega=0
+%  \end{array}
+%	\right.
+%\end{equation}
+
+The joint probability is the product of the likelihood of each bin, so the logarithm $L(\Omega|\Lambda^j)$ is the sum of for $L(\omega_i|\lambda_i^j)$ every bin $b_i$:
+
+\begin{equation}\label{log-like}
+\begin{split}
+	L^j = L(\Omega|\Lambda^j) = \sum_{i=1}^{n}L(\omega_i|\lambda_i^j)  \\
+	= \sum_{i=1}^{n} -\lambda_i^j + \omega_i\log\lambda_i^j - \log\omega_i!  
+\end{split}
+\end{equation}
+
+The fitness function is a coded version of the equation ~\ref{log-like}. It uses the probabilities of the bins of each individual of model for the $\lambda$ values. 
+
+\subsection{Evolutionary Operators and Parameters}
+
 
 \subsection{Mainshock Models}
 The GAModel is purely based on the framework suggested by the CSEP. In it, one forecast is defined as a place for a specfic time and is divided in bins. Each bin represents a geographical interval. The whole target area of study is covered by these bins and represents the $\mu(x,y)$, the background intensity~\cite{zhuang2004analyzing}. In the GAModel, each possible solution is represented as an entire forecast model.
@@ -270,7 +362,7 @@ In this context the GAModel is considered as one method to generate space-rate-t
 
 where you can denote the number of earthquakes forecast in a bin as $\lambda(t,x,y)$~\cite{zechar2010evaluating} given that $\Upsilon_t$ is the earthquake observation data up to time $t$.% Which leads to $\mu(x,y)$ the background intensity, a function of space, but not of time~\cite{zhuang2004analyzing}.
 
-The ReducedGAModel, which represents the first ideia, is a method described as the GAModel, but each possible solution represents a fraction of the forecast where we expect to find especific risk areas. The GAModel defines a expected number of earthquakes for every single bin in the target region. That could lead to exhaustive and, sometimes worthless, searches. That is caused by the number of bins in the forecast and also because some in some bins there are no earthquake occurances in the observation data. To minimize this, the ReducedGAModel only define expected number of earthquakes in bins that already had some occurance in the past, giving some sort of guideline to the GA. 
+The ReducedGAModel, which represents the first ideia (see~\ref{intro}), is a method described as the GAModel, but each possible solution represents a fraction of the forecast where we expect to find especific risk areas. The GAModel defines a expected number of earthquakes for every single bin in the target region. That could lead to exhaustive and, sometimes worthless, searches. That is caused by the number of bins in the forecast and also because some in some bins there are no earthquake occurances in the observation data. To minimize this, the ReducedGAModel only define expected number of earthquakes in bins that already had some occurance in the past, giving some sort of guideline to the GA. 
 
 To make it clear, we use the same example as the one used in ~\cite{ecta14}.The "Kanto" region, one of the four areas used in this study, is divided into 2025 bins (a grid of 45x45 squares). Each bin has an area of approximately 25km2 (Figure ??). The GAModel then calculates an expected number of earthquakes for every bin on a determinated time interval, so the GA searches for good values in 2025 bins. 
 
@@ -279,7 +371,7 @@ The ReducedGAModel will first obtain the position of past occurances and will ca
 % (it is possible that an bin had more the one occurance, therefore that number will drop. 
 
 \subsection{Mainshock+Aftershock Models}
-Hence earthquakes cluster in space and inspired by the space-time epidemic-type aftershock sequence (ETAS), the Emp-GAModel, represents the second ideia and is described as:
+Hence earthquakes cluster in space and inspired by the space-time epidemic-type aftershock sequence (ETAS), the Emp-GAModel, represents the second ideia (see~\ref{intro}) and is described as:
 
 \begin{equation}\label{reducedgamodel}
 	\lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)J(M)
@@ -362,19 +454,38 @@ The Hypotheses Comparison, or the R(atio)-Test, compares two models against them
 The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.
 
 %this is not mine
-\subsection{Evaluation}
-The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model\cite{schorlemmer2007earthquake}.
+\subsection{Evaluation}\label{eval}
+The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.
 
-%data, design, comparacao
+%data, design, comparacao, regions, year(s)
+%para o só ga ,boxplot e t-test tem que ver se tem vantagem
+%para com equations usar os testes
 \section{Experiments}\label{exp}
+data, design, comparacao, regions, year(s)
 %Tuned configuration: A parameter configuration tuned for the smaller budget of 500 evaluations used in this experiment. The tuned parameter values for each algorithm were calculated using the Sequential Model-based Algorithm Configuration method (SMAC) [7].
+
+To analyze the performance of the forecasts generated by the GAModel, the ReducedGAModel, the Emp-GAModel and finally the Emp-ReducedGAModel, we used the evalution method proposed by~\cite{schorlemmer2007earthquake} and described in section~\ref{eval}.
+
+Objecting a better understand of the patterns that most influence the earthquakes events and also to be able to determine the qualities of those forecasts, the data of the JMA catalog was divided into four groups. Each group constituent only of earthquakes that happened in a specific time interval for a given area of Japan. The experimental data will be described in details subsequently.
+
+\subsection{Experimental Data}
+
+The data used in these experiments comes from the Japan Meteorological Agency's (JMA) catalog. The catalog lists earthquakes recorded by the sensing sta- tion network in Japan. For each earthquake, the following values are given: time of occurrence, magni- tude, latitude and longitude and depth of the hypocenter.
+We consider events with magnitude above 2.5 and depth less than 100km, recorded in the period from 2000 to 2013. This accounts for more than 220.000 earthquakes in the Japanese archipelago.
+To achieve a better understanding of the forecast- ing power of GA models, we define four areas to fo- cus as scenarios in our experiment. Figure ?? shows where these four areas are located. Three of these areas (Kanto, Touhoku and Kansai), contain mainly inland earthquakes, which are considered to follow more stable patterns. The fourth area (East Japan) in- cludes also many off-shore earthquakes. To make it easier to compare the results for each area, we choose the bin size so that the total number of bins is within the same order of magnitude in all areas.
+Kanto: Kanto is the area at and nearby Tokyo. There is a large amount of seismic activity in the target period. In this study, we define this region as starting at N34.8,W138.8, with 2025 bins ar- ranged in a 45x45 grid. Each bin corresponds to a 5km2 square.
+2. Kansai: The Kansai area includes Kyoto, Osaka, Kobe and nearby cities. This area shows a rela- tively lower amount of seismic activity in the pe- riod considered. We define this region as start- ing at N34,W134.5, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 5km2 square.
+
+Touhoku: The Touhoku region is defined as the northern provinces of the main island. It shows some clusters of seismic activity during the pe- riod studied. We define this region as starting at N37.8,W139.8, with 800 bins arranged in a 40x20 grid. Each bin corresponds to a 10km2 square.
+East Japan: This area corresponds to Japan’s north-eastern coast. It includes both inland and off-shore events, which makes it more difficult to forecast. It also includes the location of the M9 earthquake of 2011. We define this region as starting at N37,W140, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 10km2 square.
 
 %All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. An algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by repeatedly generating a candidate config- uration (e.g., by local search) and evaluating the configuration on the set of the training instances (or some intelligently selected subset of training instances). The configuration with highest expected utility on the training set is returned. SMAC can be used to tune real-valued, integer-valued, categorical, and conditional parameters [7].2
 \subsection{Parameter Tuning}
 pysmac, smac
 pySMAC, a Python wrapper for the hyperparameter optimization tool SMAC
 5 https://github.com/automl/pysmac
-v\
+
+%tabelas, imagens, 
 \section{Results}\label{Results}
 
 \section{Conclusions}\label{Conclusions}
