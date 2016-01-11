@@ -51,7 +51,7 @@
 \begin{document}
 
 % Copyright
-\setcopyright{acmcopyright}
+%\setcopyright{acmcopyright}
 %\setcopyright{acmlicensed}
 %\setcopyright{rightsretained}
 %\setcopyright{usgov}
@@ -61,24 +61,24 @@
 
 
 % DOI
-\doi{10.475/123_4}
+%\doi{10.475/123_4}
 
 % ISBN
-\isbn{123-4567-24-567/08/06}
+%\isbn{123-4567-24-567/08/06}
 
 %Conference
-\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
+%\conferenceinfo{PLDI '13}{June 16--19, 2013, Seattle, WA, USA}
 
-\acmPrice{\$15.00}
+%\acmPrice{\$15.00}
 
 %
 % --- Author Metadata here ---
-\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
 %\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
 %\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
 % --- End of Author Metadata ---
 
-\title{Hibridizacao de Modelos de Riscos de Sismos com Tecnicas de Algoritmos Geneticos}
+\title{Earthquake Risk Models with Genetic Algorithm Hybridization}
 
 %
 % You need the command \numberofauthors to handle the 'placement
@@ -105,7 +105,7 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{8} %  in this sample file, there are a *total*
+\numberofauthors{3} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -122,26 +122,25 @@
 %
 % 1st. author
 \alignauthor
-Ben Trovato\titlenote{Dr.~Trovato insisted his name be first.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
-       \email{trovato@corporation.com}
+Blind Author 1%\titlenote{}\\
+       \affaddr{University 1}\\
+       \affaddr{Address 1}\\
+       \affaddr{Address 1}\\
+       \email{email@address.com}
 % 2nd. author
 \alignauthor
-G.K.M. Tobin\titlenote{The secretary disavows
-any knowledge of this author's actions.}\\
-       \affaddr{Institute for Clarity in Documentation}\\
-       \affaddr{P.O. Box 1212}\\
-       \affaddr{Dublin, Ohio 43017-6221}\\
-       \email{webmaster@marysville-ohio.com}
+Blind Author 1%\titlenote{}\\
+       \affaddr{University 1}\\
+       \affaddr{Address 1}\\
+       \affaddr{Address 1}\\
+       \email{email@address.com}
 % 3rd. author
-\alignauthor Lars Th{\o}rv{\"a}ld\titlenote{This author is the
-one who did all the really hard work.}\\
-       \affaddr{The Th{\o}rv{\"a}ld Group}\\
-       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
-       \affaddr{Hekla, Iceland}\\
-       \email{larst@affiliation.org}
+\alignauthor
+Blind Author 1%\titlenote{}\\
+       \affaddr{University 1}\\
+       \affaddr{Address 1}\\
+       \affaddr{Address 1}\\
+       \email{email@address.com}
 %\and  % use '\and' if you need 'another row' of author names
 %% 4th. author
 %\alignauthor Lawrence P. Leipuner\\
@@ -300,42 +299,12 @@ The vector of earthquake quantity expectations is defined as: earthquake by time
   ;\omega_i =\omega_i(b_i),b_i \in \beta
 \end{equation}
 
-%We assume that the each earthquake is independent from each other. The likelihood value of the observations $\omega$ in a bin with $\lambda$ expectation is given by the Poissonian probability $p$:
-%		
-%
-%\begin{equation}
-%	p(\omega|\lambda) = \frac{\lambda^\omega}{\omega!}e^{-\lambda} 
-%\end{equation}
-%	%p(\omega|\lambda) = \frac{\lambda^\omega}{\omega!}e^{-\lambda} 
-%
-%For the $\lambda = 0$ : 
-%	
-%\begin{equation}
-%	p(\omega|0) = \left\{
-%  \begin{array}{lr}
-%    1 & , \omega=0\\
-%    0 & , \omega>0
-%  \end{array}
-%\right.
-%\end{equation}
-
 The calculation of the log-likelihood value for the  $\omega_i$ observation with a given expectation $\lambda$ is defined as:
 
 
 \begin{equation}
 	L(\omega_i|\lambda_i^j) = -\lambda_i^j + \omega_i\log\lambda_i^j - \log\omega_i!
 \end{equation}
-
-%To apply the logarithm for the probabilities $p$ with $\lambda = 0$, we have:
-%
-%\begin{equation}
-%	L(\omega|0) = \left\{
-%  \begin{array}{lr}
-%    1 & , \omega>0\\
-%    -\infty & , \omega=0
-%  \end{array}
-%	\right.
-%\end{equation}
 
 The joint probability is the product of the likelihood of each bin, so the logarithm $L(\Omega|\Lambda^j)$ is the sum of for $L(\omega_i|\lambda_i^j)$ every bin $b_i$:
 
@@ -453,7 +422,7 @@ The Hypotheses Comparison, or the R(atio)-Test, compares two models against them
 
 The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.
 
-%this is not mine
+
 \subsection{Evaluation}\label{eval}
 The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.
 
@@ -469,18 +438,25 @@ To analyze the performance of the forecasts generated by the GAModel, the Reduce
 Objecting a better understand of the patterns that most influence the earthquakes events and also to be able to determine the qualities of those forecasts, the data of the JMA catalog was divided into four groups. Each group constituent only of earthquakes that happened in a specific time interval for a given area of Japan. The experimental data will be described in details subsequently.
 
 \subsection{Experimental Data}
+The data used in these experiments comes from the Japan Meteorological Agency's (JMA) catalog. It is a list of earthquakes events which took place in Japan from 2000 to 2013. Each event is characterized by some typical earhtquake information such as magnitude, latitude, longitude, and depth.
 
-The data used in these experiments comes from the Japan Meteorological Agency's (JMA) catalog. The catalog lists earthquakes recorded by the sensing sta- tion network in Japan. For each earthquake, the following values are given: time of occurrence, magni- tude, latitude and longitude and depth of the hypocenter.
-We consider events with magnitude above 2.5 and depth less than 100km, recorded in the period from 2000 to 2013. This accounts for more than 220.000 earthquakes in the Japanese archipelago.
-To achieve a better understanding of the forecast- ing power of GA models, we define four areas to fo- cus as scenarios in our experiment. Figure ?? shows where these four areas are located. Three of these areas (Kanto, Touhoku and Kansai), contain mainly inland earthquakes, which are considered to follow more stable patterns. The fourth area (East Japan) in- cludes also many off-shore earthquakes. To make it easier to compare the results for each area, we choose the bin size so that the total number of bins is within the same order of magnitude in all areas.
-Kanto: Kanto is the area at and nearby Tokyo. There is a large amount of seismic activity in the target period. In this study, we define this region as starting at N34.8,W138.8, with 2025 bins ar- ranged in a 45x45 grid. Each bin corresponds to a 5km2 square.
-2. Kansai: The Kansai area includes Kyoto, Osaka, Kobe and nearby cities. This area shows a rela- tively lower amount of seismic activity in the pe- riod considered. We define this region as start- ing at N34,W134.5, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 5km2 square.
+For the experiments we consider events with magnitude above 5.0 which happened in four specific areas of Japan, during the year of 2010 . Those areas (Kanto, Tohoku, Kansai and East Japan) represent different earthquake attributes and could lead to more information about the power of the forecasts and/or its pitfalls. Kanto, Touhoku and Kansai contain mainly inland earthquakes, which are considered to follow more stable patterns. East Japan includes also many off-shore earthquakes. For more information about the four regions as well as a map which locates them in Japan, please refer to~\cite{ecta14}.
 
-Touhoku: The Touhoku region is defined as the northern provinces of the main island. It shows some clusters of seismic activity during the pe- riod studied. We define this region as starting at N37.8,W139.8, with 800 bins arranged in a 40x20 grid. Each bin corresponds to a 10km2 square.
-East Japan: This area corresponds to Japan’s north-eastern coast. It includes both inland and off-shore events, which makes it more difficult to forecast. It also includes the location of the M9 earthquake of 2011. We define this region as starting at N37,W140, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 10km2 square.
+
+%
+%Kanto: Kanto is the area at and nearby Tokyo. There is a large amount of seismic activity in the target period. In this study, we define this region as starting at N34.8,W138.8, with 2025 bins ar- ranged in a 45x45 grid. Each bin corresponds to a 5km2 square.
+%
+%Kansai: The Kansai area includes Kyoto, Osaka, Kobe and nearby cities. This area shows a rela- tively lower amount of seismic activity in the pe- riod considered. We define this region as start- ing at N34,W134.5, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 5km2 square.
+%
+%Touhoku: The Touhoku region is defined as the northern provinces of the main island. It shows some clusters of seismic activity during the pe- riod studied. We define this region as starting at N37.8,W139.8, with 800 bins arranged in a 40x20 grid. Each bin corresponds to a 10km2 square.
+%
+%East Japan: This area corresponds to Japan’s north-eastern coast. It includes both inland and off-shore events, which makes it more difficult to forecast. It also includes the location of the M9 earthquake of 2011. We define this region as starting at N37,W140, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 10km2 square.
 
 %All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. An algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by repeatedly generating a candidate config- uration (e.g., by local search) and evaluating the configuration on the set of the training instances (or some intelligently selected subset of training instances). The configuration with highest expected utility on the training set is returned. SMAC can be used to tune real-valued, integer-valued, categorical, and conditional parameters [7].2
-\subsection{Parameter Tuning}
+\subsection{Experimental Design}
+
+
+\subsubsection{Parameter Tuning}
 pysmac, smac
 pySMAC, a Python wrapper for the hyperparameter optimization tool SMAC
 5 https://github.com/automl/pysmac
