@@ -46,7 +46,10 @@
 % For tracking purposes - this is V2.0 - May 2012
 
 \documentclass{sig-alternate-05-2015}
-
+\usepackage[T1]{fontenc}
+\usepackage{indentfirst}
+\usepackage[english]{babel}
+%\usepackage{apalike}
 
 \begin{document}
 
@@ -249,20 +252,43 @@ The forecast models resulted of those methods were analyzed using likelihood tes
 
 For developing the methods and to be able to compare them we used the earthquake catalog from the Japanese Meteorological Agency (JMA), using event data from 2005 to 2010.  
 
-This paper is organized as: in section \ref{Models}, we give a details of each of the forecast proposed covering the Collaboratory for the Study of Earthquake Predictability (CSEP) framework and the empirical laws. In section \ref{Tests}, we give the description of the tests proposed in~\cite{Schorlemmer2007}. After that, in \ref{exp}, we define the target areas used for the experiment and the data from the JMA; we clarify the design followed during the experiments and how ew compared the forecast models derived from our methods. Finally, we show the results and conclude this work in~\ref{Results} and \ref{Conclusions}.
+This paper is organized as:in Section \ref{estadoArte}reviews applications of Evolutionary Computation in the context of seismology research. The next Section,Section \ref{Models}, we give a details of each of the forecast proposed covering the Collaboratory for the Study of Earthquake Predictability (CSEP) framework and the empirical laws. In Section \ref{Tests}, we give the description of the tests proposed in~\cite{Schorlemmer2007}. After that, in \ref{exp}, we define the target areas used for the experiment and the data from the JMA; we clarify the design followed during the experiments and how ew compared the forecast models derived from our methods. Finally, we show the results and conclude this work in~\ref{Results} and \ref{Conclusions}.
 
+%TODO: change text to mine version
+%TODO: update info + ECTA
+\section{Evolutionary Computation for Earthquake Risk Analysis}label{estadoArte}
+Reports of the application of Evolutionary Computation and related methods for the generation of earthquake forecasts are rather sparse.
 
-%TODO: descrever os bins, o gamodel, explicar a nova versao e motivacao, explicar as equacoes em detalhes aqui tá muito intro 
-%TODO: genoma, o que tem no bin, funcao de fitness, operators and parameters
-\section{1-year Models}\label{Models}
-In the Collaboratory for the Study of Earthquake Predictability (CSEP) framework, a forecast uses one common format which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date, is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
+The usage of Evolutionary Computation in the field of earthquake risk models is somewhat sporadic. Zhang and Wang~\cite{Zhang2012} used Genetic Algorithms to fine tune an Artificial Neural Network (ANN), and use this system to produce a forecast. Zhou and Zu~\cite{Feiyan2014} also proposed a combination of ANN and EC, but their system only forecasts the magnitude parameter of earthquakes. Sadat, in the paper~\cite{sadat2015application}, used a very simliar ideia to predict the magnitude of the earthquakes in North Iran, but in thisc ase he used ANN and GA. 
+
+Some sismological models were developed aiming to estimate parameter values by using Evolutionarry Computation.
+
+For example, Evolutionary Computation was used to estimate the peak ground acceleration of seismically active areas~\cite{Kermani2009,Cabalar2009,Kerh2010,Kerh2015}. Ramos~\cite{Ramos2011} used Genetic Algorithms to decide the location of sensing stations and Saeidian~\cite{saeidian2016evaluation} made a comparation in performance between the GA and Bees Algorithm to decide which of those techniques would performe better when chosing the location of sensing stations. Nicknam et al.~\cite{Nicknam2010} and Kennett and Sambridge~\cite{Kennett1992} used evolutionary computation to determine the Fault Model parameters of a earthquake.
+
+%TODO: Last part in somewhat bad
+\subsection{What is Evolutionary Computation And What are Genetic Algorithms}\label{EC}
+	Evolutionary Computation (EC) is concerned with algorithms based on the Darwinian principles of natural selection. It may find, by try trial and error and based on a great amount of data, better solutions for problems that human beings may not find it easy to solve~\cite{koza2003genetic}. That could also be done without any domain knowledge about the problem to be controlled~\cite{Michie94machinelearning}.
+	
+The main goal of a Genetic Algorithm (GA), a EC technique, is to find approximated solutions in problems of search and optimization. Based on Koza~\cite{koza2003genetic}, GA  are mechanism of search based on natural selection and genetic. They explore historical data to find optimum search points with some performance increment~\cite{Goldberg:1989:GAS:534133}.
+
+	A GA uses those mechanisms to generate solutions to optimization and search problems. The first step is to create an initial population of possible solutions, where each solution is called an individual. Those individuals have its fitness value estimated and those with greater fitness value are then chosen to reproduction. After some evaluations, we expect to find a optimum solution. 
+
+	Frequently, the initial population is randomly generated once it is common to ignore the main aspects that influence the algorithm performance. In other words, hence it is common to lack any domain knownledge, the random population is a good way to search for optimum solutions. 
+
+%TODO: Why 1-year?
+\section{The Forecast Models Using Genetic Algorithm}\label{Models}
+
+All forecast models proposed in this paper are based in the Collaboratory for the Study of Earthquake Predictability (CSEP) framework. Each individual has its own representation of the framework based on different perceptions of what are the best aspects of the framework. The population is trained on earthquake event data for a training period, which is anterior to the target test period. After completing the evalution limit, the best individual is chosen to be the final forecast.
+ 
+\subsection{1-year Models}
+In the CSEP framework, a forecast model uses one common format in the literature,	 which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
 
 Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the forecast models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
 
-\subsection{Genome Representation}
+\subsection{Genome Representation}\label{genome}
 The GAModel each individual represents an entire forecast model~\cite{ecta14}. For the ReducedGAModel and each individual represents a subarea of the forecast model. This subarea is related to earthquakes past events locations only, so the genome size is usually smaller than the one used in the GAModel and the Emp-GAModel. 
 
-The Emp-ReducedGAModel and the Emp-GAModel are only different from the ReducedGAmodel and from the GAmodel, respectively, by the use of equations after the forecast is provided. This means that the theirs genome representation are the same as the GAModel and the ReducedGAModel,correspondingly.
+The Emp-ReducedGAModel and the Emp-GAModel differs only from the ReducedGAmodel and from the GAmodel, respectively, by the use of equations after the forecast is provided. This means that the theirs genome representation are the same as the GAModel and the ReducedGAModel,correspondingly.
 
 For all methods, the genome is a real valued array X, where each element corresponds to one bin in the desired model (the number of bins n is defined by the problem). Each element $x_i \in X$ takes a value from $[0,1)$. In the initial population, these values are sampled from a uniform distribution. For more details of the genome represatation, please refer to~\cite{ecta14}.
 \subsection{Fitness Function}
@@ -333,7 +359,7 @@ where you can denote the number of earthquakes forecast in a bin as $\lambda(t,x
 
 The ReducedGAModel, which represents the first ideia (see~\ref{intro}), is a method described as the GAModel, but each possible solution represents a fraction of the forecast where we expect to find especific risk areas. The GAModel defines a expected number of earthquakes for every single bin in the target region. That could lead to exhaustive and, sometimes worthless, searches. That is caused by the number of bins in the forecast and also because some in some bins there are no earthquake occurances in the observation data. To minimize this, the ReducedGAModel only define expected number of earthquakes in bins that already had some occurance in the past, giving some sort of guideline to the GA. 
 
-To make it clear, we use the same example as the one used in ~\cite{ecta14}.The "Kanto" region, one of the four areas used in this study, is divided into 2025 bins (a grid of 45x45 squares). Each bin has an area of approximately 25km2 (Figure ??). The GAModel then calculates an expected number of earthquakes for every bin on a determinated time interval, so the GA searches for good values in 2025 bins. 
+To make it clear, we use the same example as the one used in ~\cite{ecta14}.The "Kanto" region, one of the four areas used in this study, is divided into 2025 bins (a grid of 45x45 squares). Each bin has an area of approximately $25km^2$. The GAModel then calculates an expected number of earthquakes for every bin on a determinated time interval, so the GA searches for good values in 2025 bins. 
 
 The ReducedGAModel will first obtain the position of past occurances and will calculate some expected number of earthquakes for only the bins related to those positions. For example, if there are 10 bins with occurances in Kanto in the last year, it will make the GA search good values for only those 10 bins, leaving the other 2015 bins with the value zero, representing zero occurances. It is important to highlight that in the worst case, it will make the same amount of searches as the GAModel.
 
@@ -380,7 +406,7 @@ J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
 
 At last, the Emp-ReducedGAModel is a mix between the two ideias, so it is represented as the Emp-GAModel but its candidates take the same form as the ones in the ReducedGAModel.
 
-%traduzir, pegar coisas do first (passo-a-passo), pq eles e nao outros, o que espero medir
+%TODO: Move this whole section to exp (where there?)
 \section{Tests for evaluating Models}\label{Tests}
 
 In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the forecast models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
@@ -439,7 +465,7 @@ Objecting a better understand of the patterns that most influence the earthquake
 \subsection{Experimental Data}
 The data used in these experiments comes from the Japan Meteorological Agency's (JMA) catalog. It is a list of earthquakes events which took place in Japan from 2000 to 2013. Each event is characterized by some typical earhtquake information such as magnitude, latitude, longitude, and depth.
 
-For the experiments we consider events with magnitude above 5.0 which happened in four specific areas of Japan, during the year of 2010 . Those areas (Kanto, Tohoku, Kansai and East Japan) represent different earthquake attributes and could lead to more information about the power of the forecasts and/or its pitfalls. Kanto, Touhoku and Kansai contain mainly inland earthquakes, which are considered to follow more stable patterns. East Japan includes also many off-shore earthquakes. For more information about the four regions as well as a map which locates them in Japan, please refer to~\cite{ecta14}.
+For the experiments we consider events with magnitude above 5.0 which happened in four specific areas of Japan, during the year of 2010. Those areas (Kanto, Tohoku, Kansai and East Japan) represent different earthquake attributes and could lead to more information about the power of the forecasts and/or its pitfalls. Kanto, Touhoku and Kansai contain mainly inland earthquakes, which are considered to follow more stable patterns. East Japan includes also many off-shore earthquakes. For more information about the four regions as well as a map which locates them in Japan, please refer to~\cite{ecta14}.
 
 
 %
@@ -451,8 +477,6 @@ For the experiments we consider events with magnitude above 5.0 which happened i
 %
 %East Japan: This area corresponds to Japan’s north-eastern coast. It includes both inland and off-shore events, which makes it more difficult to forecast. It also includes the location of the M9 earthquake of 2011. We define this region as starting at N37,W140, with 1600 bins arranged in a 40x40 grid. Each bin corresponds to a 10km2 square.
 
-%All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. An algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by repeatedly generating a candidate config- uration (e.g., by local search) and evaluating the configuration on the set of the training instances (or some intelligently selected subset of training instances). The configuration with highest expected utility on the training set is returned. SMAC can be used to tune real-valued, integer-valued, categorical, and conditional parameters [7].2
-%TODO: describe the scenarios
 \subsection{Experimental Design}
 To compare the performance of the forecast models, we execute a simulation experiment on ??? scenarios. Each scneario is defined by a region for a 1-year interval, starting in Jan/01 and endding in Dec/31. To build one scenario, one region is chosen from the set of regions (Kanto, Tohoku, East Japan and Kansai) for a determinated year. To train the methods, we use 5 years of prior data, for example, to train the 2010 1-year GAModel Kanto region, the data used is from the events which occurred in the years of 2006, 2007, 2008 and 2009 in Kanto.
 
@@ -463,18 +487,30 @@ The second approach is to using the Log-likelihood values obtained by each of th
 All forecast models here presented are stochastic methods. Therefore, to be able to compare test the statistical significance of the results, we run each forecast model 10 times. That means that all results showed are the mean of these 10 executions.
 
 \subsection{Parameter Tuning}
-pysmac, smac
-pySMAC, a Python wrapper for the hyperparameter optimization tool SMAC
-5 https://github.com/automl/pysmac
+%All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. 
 
-%tabelas, imagens, 
+Parameter tunning is a commonly practiced approach which aims to find optimum parameters values before the run of a algorithm. Later this algorithm is executed with these values, which remain fixed during the run~\cite{eiben2011parameter}.
+
+%review this
+To find a good set of parameters for the all the forecast models algorithms, the pySMAC, a Python wrapper for the hyperparameter optimization tool Sequential Model- based Algorithm Configuration (SMAC), was used~\cite{hutter2010sequential}.
+
+SMAC is an algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by generating a candidate configuration and evaluating the configuration on the set of the training instances~\cite{aranha2015optimization}. 
+
+The configuration which best fits each one of the forecast models algorithm is then chosen to be used as the set of values for the its algorithms run. For all algorithms present here, the default control parameter values (which are based on the values applied in the GAModel~\cite{ecta14}), the ranges for the parameters (arbitrarily chosen), as well as the values found by SMAC, are shown in Table X?X?X?.
+
+%5 https://github.com/automl/pysmac
+
+%TODO: tabelas, imagens, add
+%TODO: Discussion of the results, what should i do? is it good?...?
 \section{Results}\label{Results}
 
+%TODO: add future work with Gabriels
+%TODO: this section should be a revision of all
 \section{Conclusions}\label{Conclusions}
 %\end{document}  % This is where a 'short' article might terminate
 
 %ACKNOWLEDGMENTS are optional
-\section{Acknowledgments}
+\section*{Acknowledgments}
 Bogdan, Zechar, Zhuang
 
 ???

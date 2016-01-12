@@ -7,12 +7,85 @@ C.~Aranha, Y.~C. Lavinas, M.~Ladeira, and B.~Enescu.
 \newblock In {\em Proceedings of the International Conference on Evolutionary
   Computation Theory and Applications}, pages 49--58, 2014.
 
+\bibitem{aranha2015optimization}
+C.~Aranha, R.~Tanabe, R.~Chassagne, and A.~Fukunaga.
+\newblock Optimization of oil reservoir models using tuned evolutionary
+  algorithms and adaptive differential evolution.
+\newblock In {\em Evolutionary Computation (CEC), 2015 IEEE Congress on}, pages
+  877--884. IEEE, 2015.
+
+\bibitem{Cabalar2009}
+A.~F. Cabalar and A.~Cevik.
+\newblock Genetic programming-based attenuation relationship: An application of
+  recent earthquakes in turkey.
+\newblock {\em Computers and Geosciences}, 35:1884--1896, October 2009.
+
+\bibitem{eiben2011parameter}
+A.~E. Eiben and S.~K. Smit.
+\newblock Parameter tuning for configuring and analyzing evolutionary
+  algorithms.
+\newblock {\em Swarm and Evolutionary Computation}, 1(1):19--31, 2011.
+
+\bibitem{Goldberg:1989:GAS:534133}
+D.~E. Goldberg.
+\newblock {\em Genetic Algorithms in Search, Optimization and Machine
+  Learning}.
+\newblock Addison-Wesley Longman Publishing Co., Inc., Boston, MA, USA, 1st
+  edition, 1989.
+
 \bibitem{helmstetter2003predictability}
 A.~Helmstetter and D.~Sornette.
 \newblock Predictability in the epidemic-type aftershock sequence model of
   interacting triggered seismicity.
 \newblock {\em Journal of Geophysical Research: Solid Earth (1978--2012)},
   108(B10), 2003.
+
+\bibitem{hutter2010sequential}
+F.~Hutter, H.~H. Hoos, and K.~Leyton-Brown.
+\newblock Sequential model-based optimization for general algorithm
+  configuration (extended version).
+\newblock Technical report, Technical Report TR-2010-10, University of British
+  Columbia, Computer Science, 2010.
+
+\bibitem{Kennett1992}
+B.~L.~N. Kennet and M.~S. Sambridge.
+\newblock Earthquake location — genetic algorithms for teleseisms.
+\newblock {\em Physics of the Earth and Planetary Interiors},
+  75(1--3):103--110, December 1992.
+
+\bibitem{Kerh2010}
+T.~Kerh, D.~Gunaratnam, and Y.~Chan.
+\newblock Neural computing with genetic algorithm in evaluating potentially
+  hazardous metropolitan areas result from earthquake.
+\newblock {\em Neural Comput. Appl.}, 19(4):521--529, June 2010.
+
+\bibitem{Kerh2015}
+T.~Kerh, Y.-H. Su, and A.~Mosallam.
+\newblock Incorporating global search capability of a genetic algorithm into
+  neural computing to model seismic records and soil test data.
+\newblock {\em Neural Computing and Applications}, pages 1--12, 2015.
+
+\bibitem{Kermani2009}
+E.~Kermani, Y.~Jafarian, and M.~H. Baziar.
+\newblock New predictive models for the $v_{max}/a_{max}$ ratio of strong
+  ground motions using genetic programming.
+\newblock {\em International Journal of Civil Engineering}, 7(4):236--247,
+  December 2009.
+
+\bibitem{koza2003genetic}
+J.~R. Koza, M.~A. Keane, and M.~J. Streeter.
+\newblock Genetic programming's human-competitive results.
+\newblock {\em IEEE Intelligent Systems}, pages 25--31, 2003.
+
+\bibitem{Michie94machinelearning}
+D.~Michie, D.~J. Spiegelhalter, and C.~Taylor.
+\newblock Machine learning, neural and statistical classification, 1994.
+
+\bibitem{Nicknam2010}
+A.~Nicknam, R.~Abbasnia, Y.~Eslamian, M.~Bozorgnasab, and E.~A. Mosabbeb.
+\newblock Source parameters estimation of 2003 bam earthquake mw 6.5 using
+  empirical green's function method, based on an evolutionary approach.
+\newblock {\em J. Earth Syst. Sci.}, 119(3):383--396, June 2010.
 
 \bibitem{ogata2006space}
 Y.~Ogata and J.~Zhuang.
@@ -23,6 +96,24 @@ Y.~Ogata and J.~Zhuang.
 F.~Omori.
 \newblock On the after-shocks of earthquakes.
 \newblock 1895.
+
+\bibitem{Ramos2011}
+J.~I.~E. Ramos and R.~A. V\'azques.
+\newblock Locating seismic-sense stations through genetic algorithms.
+\newblock In {\em Proceedings of the GECCO'11}, pages 941--948, Dublin,
+  Ireland, July 2011. ACM.
+
+\bibitem{sadat2015application}
+N.~Sadat, S.~Zakeri, and S.~Pashazadeh.
+\newblock Application of neural network based on genetic algorithm in
+  predicting magnitude of earthquake in north tabriz fault (nw iran).
+\newblock {\em Current Science (00113891)}, 109(9), 2015.
+
+\bibitem{saeidian2016evaluation}
+B.~Saeidian, M.~S. Mesgari, and M.~Ghodousi.
+\newblock Evaluation and comparison of genetic algorithm and bees algorithm for
+  location-allocation of earthquake relief centers.
+\newblock {\em International Journal of Disaster Risk Reduction}, 2016.
 
 \bibitem{schorlemmer2007earthquake}
 D.~Schorlemmer, M.~Gerstenberger, S.~Wiemer, D.~Jackson, and D.~A. Rhoades.
@@ -59,6 +150,21 @@ J.~D. Zechar.
   for students and new researchers.
 \newblock {\em Community Online Resource for Statistical Seismicity Analysis},
   pages 1--26, 2010.
+
+\bibitem{Zhang2012}
+Q.~Zhang and C.~Wang.
+\newblock Using genetic algorithms to optimize artificial neural network: a
+  case study on earthquake prediction.
+\newblock In {\em Second International Conference on Genetic and Evolutionary
+  Computing}, pages 128--131. IEEE, 2012.
+
+\bibitem{Feiyan2014}
+F.~Zhou and X.~Zhu.
+\newblock Earthquake prediction based on lm-bp neural network.
+\newblock In X.~Liu and Y.~Ye, editors, {\em Proceedings of the 9th
+  International Symposium on Linear Drives for Industry Applications, Volume
+  1}, volume 270 of {\em Lecture Notes in Electrical Engineering}, pages
+  13--20. Springer Berlin Heidelberg, 2014.
 
 \bibitem{zhuang2004analyzing}
 J.~Zhuang, Y.~Ogata, and D.~Vere-Jones.
