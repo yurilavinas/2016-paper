@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JAN 2016 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JAN 2016 18:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -345,60 +345,53 @@ LaTeX Font Info:    Try loading font information for T1+ptm on input line 179.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-Overfull \hbox (10.47394pt too wide) in paragraph at lines 183--184
-\T1/aer/m/n/9 three ex-tended ver-sions for the GAModel. The first method,the
- []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (4.02007pt too wide) in paragraph at lines 243--244
+Overfull \hbox (4.02007pt too wide) in paragraph at lines 246--247
 []\T1/aer/m/n/9 Earthquakes may cause soil rup-ture or move-ment, tsunamis
  []
 
+[1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+
+
+]
 
 LaTeX Warning: Reference `estadoArte' on page \thepage  undefined on input line
- 255.
+ 258.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
-
-
-] [2]
-Overfull \hbox (5.77666pt too wide) in paragraph at lines 353--354
+[2]
+Overfull \hbox (5.77666pt too wide) in paragraph at lines 356--357
 []\T1/aer/m/n/9 For the Re-ducedG-AModel and the Emp-ReducedGAModel,
  []
 
 
-Overfull \hbox (9.19695pt too wide) in paragraph at lines 389--390
+Overfull \hbox (9.19695pt too wide) in paragraph at lines 392--393
 []\T1/aer/m/n/9 The Emp-GAModel uses $\OML/cmm/m/it/9 ^^V\OT1/cmr/m/n/9 (\OML/c
 mm/m/it/9 x; y\OT1/cmr/m/n/9 )$ \T1/aer/m/n/9 as de-fined for the GAModel,
  []
 
 [3] [4]
-Overfull \hbox (5.86656pt too wide) in paragraph at lines 500--501
+Overfull \hbox (5.86656pt too wide) in paragraph at lines 503--504
 []\T1/aer/m/n/9 Parameter tun-ning is a com-monly prac-ticed ap-proach which
  []
 
 
 LaTeX Warning: Reference `smac-par' on page \thepage  undefined on input line 5
-07.
+10.
 
 
-Overfull \hbox (28.9472pt too wide) in paragraph at lines 509--510
+Overfull \hbox (28.9472pt too wide) in paragraph at lines 512--513
 []\T1/aer/m/n/9 EXPLICAR A QUES-TAO DA EX-PLI-CA-CAO DOS PARAMET-
  []
 
 
-Overfull \hbox (26.25175pt too wide) in paragraph at lines 515--549
+Overfull \hbox (26.25175pt too wide) in paragraph at lines 518--552
  [] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (26.25175pt too wide) in paragraph at lines 556--590
+Overfull \hbox (26.25175pt too wide) in paragraph at lines 559--593
  [] 
  []
 
@@ -406,6 +399,9 @@ Overfull \hbox (26.25175pt too wide) in paragraph at lines 556--590
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 (./gecco-2016.bbl [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6])
@@ -422,7 +418,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  3647 strings out of 493089
  47563 string characters out of 6134842
- 141615 words of memory out of 5000000
+ 140615 words of memory out of 5000000
  7012 multiletter control sequences out of 15000+600000
  53836 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -443,7 +439,7 @@ st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb>
-Output written on gecco-2016.pdf (7 pages, 207981 bytes).
+Output written on gecco-2016.pdf (7 pages, 209679 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
