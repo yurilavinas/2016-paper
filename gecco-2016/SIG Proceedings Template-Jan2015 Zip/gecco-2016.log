@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JAN 2016 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  26 JAN 2016 18:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -352,46 +352,51 @@ Overfull \hbox (4.02007pt too wide) in paragraph at lines 246--247
 []\T1/aer/m/n/9 Earthquakes may cause soil rup-ture or move-ment, tsunamis
  []
 
+
+Overfull \hbox (4.24481pt too wide) in paragraph at lines 250--251
+[]\T1/aer/m/n/9 Formulated on this idea, we pro-pose the Re-ducedG-AModel.
+ []
+
 [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
 
 LaTeX Warning: Reference `estadoArte' on page \thepage  undefined on input line
- 258.
+ 262.
 
 [2]
-Overfull \hbox (5.77666pt too wide) in paragraph at lines 356--357
+Overfull \hbox (5.77666pt too wide) in paragraph at lines 360--361
 []\T1/aer/m/n/9 For the Re-ducedG-AModel and the Emp-ReducedGAModel,
  []
 
 
-Overfull \hbox (9.19695pt too wide) in paragraph at lines 392--393
+Overfull \hbox (9.19695pt too wide) in paragraph at lines 396--397
 []\T1/aer/m/n/9 The Emp-GAModel uses $\OML/cmm/m/it/9 ^^V\OT1/cmr/m/n/9 (\OML/c
 mm/m/it/9 x; y\OT1/cmr/m/n/9 )$ \T1/aer/m/n/9 as de-fined for the GAModel,
  []
 
 [3] [4]
-Overfull \hbox (5.86656pt too wide) in paragraph at lines 503--504
+Overfull \hbox (5.86656pt too wide) in paragraph at lines 507--508
 []\T1/aer/m/n/9 Parameter tun-ning is a com-monly prac-ticed ap-proach which
  []
 
 
 LaTeX Warning: Reference `smac-par' on page \thepage  undefined on input line 5
-10.
+14.
 
 
-Overfull \hbox (28.9472pt too wide) in paragraph at lines 512--513
+Overfull \hbox (28.9472pt too wide) in paragraph at lines 516--517
 []\T1/aer/m/n/9 EXPLICAR A QUES-TAO DA EX-PLI-CA-CAO DOS PARAMET-
  []
 
 
-Overfull \hbox (26.25175pt too wide) in paragraph at lines 518--552
+Overfull \hbox (26.25175pt too wide) in paragraph at lines 522--556
  [] 
  []
 
 
-Overfull \hbox (26.25175pt too wide) in paragraph at lines 559--593
+Overfull \hbox (26.25175pt too wide) in paragraph at lines 563--597
  [] 
  []
 
@@ -399,9 +404,6 @@ Overfull \hbox (26.25175pt too wide) in paragraph at lines 559--593
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 (./gecco-2016.bbl [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [6])
@@ -422,7 +424,7 @@ Here is how much of TeX's memory you used:
  7012 multiletter control sequences out of 15000+600000
  53836 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,35p,790b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,15n,35p,791b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/
@@ -439,7 +441,7 @@ st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb>
-Output written on gecco-2016.pdf (7 pages, 209679 bytes).
+Output written on gecco-2016.pdf (7 pages, 209946 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream
