@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  13 JAN 2016 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  18 JAN 2016 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -249,7 +249,11 @@ File: babel.def 2014/09/25 3.9l Babel common definitions
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen124
 )
-(./gecco-2016.aux)
+(./gecco-2016.aux
+
+LaTeX Warning: Label `smac-par2' multiply defined.
+
+)
 \openout1 = `gecco-2016.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -264,8 +268,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
-
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count112
 \scratchdimen=\dimen125
@@ -373,7 +376,16 @@ Overfull \hbox (5.86656pt too wide) in paragraph at lines 500--501
  []
 
 
-Overfull \hbox (26.01778pt too wide) in paragraph at lines 514--548
+LaTeX Warning: Reference `smac-par' on page \thepage  undefined on input line 5
+07.
+
+
+Overfull \hbox (28.9472pt too wide) in paragraph at lines 509--510
+[]\T1/aer/m/n/9 EXPLICAR A QUES-TAO DA EX-PLI-CA-CAO DOS PARAMET-
+ []
+
+
+Overfull \hbox (26.25175pt too wide) in paragraph at lines 515--549
  [] 
  []
 
@@ -391,9 +403,6 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 (./gecco-2016.bbl [5]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [6])
 [7
 
@@ -401,11 +410,14 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
  3647 strings out of 493089
  47563 string characters out of 6134842
- 140586 words of memory out of 5000000
+ 141615 words of memory out of 5000000
  7012 multiletter control sequences out of 15000+600000
  53836 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -426,7 +438,7 @@ st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/font
 s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
 /urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
 /utmr8a.pfb>
-Output written on gecco-2016.pdf (7 pages, 205654 bytes).
+Output written on gecco-2016.pdf (7 pages, 208000 bytes).
 PDF statistics:
  89 PDF objects out of 1000 (max. 8388607)
  64 compressed objects within 1 object stream

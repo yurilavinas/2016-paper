@@ -1,4 +1,4 @@
-% This is "sig-alternate.tex" V2.1 April 2013
+	% This is "sig-alternate.tex" V2.1 April 2013
 % This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
 %
 % This example file demonstrates the use of the 'sig-alternate.cls'
@@ -178,9 +178,9 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 
 \maketitle
 \begin{abstract}
-This project main goal is to refine a method, called the GAModel, by obtaining better accuracy in seismic risk analysis. The GAModel is a model which aims to generate forecasts by using only Evolutionary Computation (EC). % It is based purely on a standard Genetic Algorithm (GA) with real valued genome, where each allele corresponds to a bin in the forecast model. 
+The GAModel is a method which aims to generate forecasts by using only Evolutionary Computation (EC). This project main goal is to refine the GAModel aiming for better accuracy in seismic risk analysis.  % It is based purely on a standard Genetic Algorithm (GA) with real valued genome, where each allele corresponds to a bin in the forecast model. 
 
-This document sumamarizes the GAModel and proposes three extended versions for the GAModel. The first model, ReducedGAModel, is similar to the GAModel, tough it has a different genotype representation. In the GAModel the genotype is related with the fenotype, and in ReducedGAModel the genotype is a version non-related with the fenotype. The second model named as Emp-ReducedGAModel, as the reducedGAModel, uses this new genotype idea and incomporates some emperical laws such as the modified Omori-Utsu formula. The last one, the Emp-GAModel, recovers the genotype-fenotype relation from the GAmodel but also incomporotes the same emperical laws that composes the ReducedGAModel.
+This document sumamarizes the GAModel and proposes three extended versions for the GAModel. The first method,the ReducedGAModel, is similar to the GAModel, tough it has a different genotype representation. In the GAModel the genotype is related with the fenotype, and in ReducedGAModel the genotype is a version non-related with the fenotype. The second model named as Emp-ReducedGAModel, as the reducedGAModel, uses this new genotype idea and incomporates some emperical laws such as the modified Omori-Utsu formula. The last one, the Emp-GAModel, recovers the genotype-fenotype relation from the GAmodel but also incomporotes the same emperical laws that composes the ReducedGAModel.
 
 These four forecast models were evaluated and compared based on the predictabily experiments framework proposed by the "Collaboratory for the Study of Earthquake Predictability" (CSEP), an international effort to standardize the study and testing of earthquake forecasting models. The experiments were designed to compare 1-year earthquake rate forecasts for four regions in Japan in using the data from the Japan Meteorological Agency (JMA) earthquake catalog.
 
@@ -271,9 +271,9 @@ For example, Evolutionary Computation was used to estimate the peak ground accel
 	
 The main goal of a Genetic Algorithm (GA), a EC technique, is to find approximated solutions in problems of search and optimization. Based on Koza~\cite{koza2003genetic}, GA  are mechanism of search based on natural selection and genetic. They explore historical data to find optimum search points with some performance increment~\cite{Goldberg:1989:GAS:534133}.
 
-	A GA uses those mechanisms to generate solutions to optimization and search problems. The first step is to create an initial population of possible solutions, where each solution is called an individual. Those individuals have its fitness value estimated and those with greater fitness value are then chosen to reproduction. After some evaluations, we expect to find a optimum solution. 
+	A GA uses those mechanisms to generate solutions to optimization and search problems. The first step is to create an initial population of possible solutions, where each solution is called an individual. Those individuals have its fitness value estimated and those with greater fitness value are then chosen to reproduction. After some evaluations, we expect to find an optimum solution. 
 
-	Frequently, the initial population is randomly generated once it is common to ignore the main aspects that influence the algorithm performance. In other words, hence it is common to lack any domain knownledge, the random population is a good way to search for optimum solutions. 
+	Frequently, the initial population is randomly generated once it is common to ignore the main aspects that influence the algorithm performance. In other words, hence it is common to lack any domain knowledge, the random population is a good way to search for optimum solutions. 
 
 %TODO: Why 1-year?
 \section{The Forecast Models Using Genetic Algorithm}\label{Models}
@@ -284,7 +284,7 @@ Each individual has its own representation of the framework based on different p
 
 The population is trained on earthquake event data for a training period, which is anterior to the target test period. After completing the evalution limit, the best individual is chosen to be the final forecast.
  
-\subsection{1-year Models}
+icio\subsection{1-year Models}
 In the CSEP framework, a forecast model uses one common format in the literature,	 which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
 
 Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the forecast models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
@@ -380,7 +380,7 @@ Hence earthquakes cluster in space and inspired by the space-time epidemic-type 
 	\lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)J(M)
 \end{equation}
 
-adicionar RI nanjo no lugar da F
+%TODO: adicionar RI nanjo no lugar da F
 \begin{equation}\label{emp-model}
  \lambda(t,x,y|\Upsilon_t) = \mu(x,y) + \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)F
 \end{equation}
@@ -506,48 +506,48 @@ SMAC is an algorithm configurator takes as input an algorithm executable, a form
 
 The configuration which best fits each one of the forecast models algorithm is then chosen to be used as the set of values for the its algorithms run. For all algorithms present here, the default control parameter values (which are based on the values applied in the GAModel~\cite{ecta14}), the ranges for the parameters (arbitrarily chosen), as well as the values found by SMAC, are shown in Table~\ref{smac-par} for GAModel and Emp-GAmodel and in Table~\ref{smac-par2} for ReducedGAModel and Emp-ReducedGAModel.
 
+EXPLICAR A QUESTAO DA EXPLICACAO DOS PARAMETROS $N_GEN * POP = CONST$
 
 
 \begin{table}[!h]
   \begin{center}
-  \caption{The default control parameter values and the best set of parameters found by tunning the algorithm with SMAC for the GAModel and the Emp-GAModel}
-\begin{tabular}{ |c|c|c|c|cl| }
+  \caption{The default control parameter values and the best set of parameters found by tunning the algorithm with SMAC for the ReducedGAModel and the Emp-ReducedGAModel}
+\begin{tabular}{ |c|c|c|c|c| }
 \hline
 %\multicolumn{5}{ |c| }{SMAC configuration and values for GAModel and Emp-GAModel} \\
 \hline
-\multirow{4}{*}{Kanto}
+\multirow{5}{*}{Kanto}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
  & Crossover Chance & [0,1] & 0.9 & 0.9\\
  & Mutation Chance & [0,1] & 0.1 & 0.1\\
-  & Population Size & N/A & 500\\
+ & Population Size & N/A & 500 &\\
  & Generation Number & [50,250] & 100 & 100 \\ \hline
 \multirow{4}{*}{Kansai}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
  & Crossover Chance & [0,1] & 0.9 & 0.9\\
  & Mutation Chance & [0,1] & 0.1 & 0.1\\
-  & Population Size & N/A & 500\\
+ & Population Size & N/A & 500 &\\\ 
  & Generation Number & [50,250] & 100 & 100 \\ \hline
 \multirow{4}{*}{Tohoku}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & b 0.9\\
+ & Crossover Chance & [0,1] & 0.9 & 0.9\\
  & Mutation Chance & [0,1] & 0.1 & 0.1\\
-  & Population Size & N/A & 500\\
+ & Population Size & N/A & 500 &\\
  & Generation Number & [50,250] & 100 & 100 \\ \hline
 \multirow{4}{*}{East Japan}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
-  & Population Size & N/A & 500\\
- & Generation Number & [50,250] & 100 & 100 \\ \hline
+ & Crossover Chance & [0,1] & 0.9 & 0.8826\\
+ & Mutation Chance & [0,1] & 0.1 & 0.1724\\
+ & Population Size & N/A & 500 &\\
+ & Generation Number & [50,250] & 100 & 106 \\ \hline
 \hline
 \end{tabular}
   \end{center}
-  
-  \label{smac-par}
+  \label{smac-par2}
 \end{table}
 
 \begin{table}[!h]
@@ -562,28 +562,28 @@ The configuration which best fits each one of the forecast models algorithm is t
  \cline{2-5}
  & Crossover Chance & [0,1] & 0.9 & 0.9\\
  & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500\\
+ & Population Size & N/A & 500 &\\
  & Generation Number & [50,250] & 100 & 100 \\ \hline
 \multirow{4}{*}{Kansai}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
  & Crossover Chance & [0,1] & 0.9 & 0.9\\
  & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500\\ 
+ & Population Size & N/A & 500 &\\\ 
  & Generation Number & [50,250] & 100 & 100 \\ \hline
 \multirow{4}{*}{Tohoku}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & b 0.9\\
+ & Crossover Chance & [0,1] & 0.9 & 0.9\\
  & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500\\ 
+ & Population Size & N/A & 500 &\\
  & Generation Number & [50,250] & 100 & 100 \\ \hline
 \multirow{4}{*}{East Japan}
  & Parameter & Range & Default & Tuned \\
  \cline{2-5}
  & Crossover Chance & [0,1] & 0.9 & 0.8826\\
  & Mutation Chance & [0,1] & 0.1 & 0.1724\\
-  & Population Size & N/A & 545 \\
+ & Population Size & N/A & 500 &\\
  & Generation Number & [50,250] & 100 & 106 \\ \hline
 \hline
 \end{tabular}
