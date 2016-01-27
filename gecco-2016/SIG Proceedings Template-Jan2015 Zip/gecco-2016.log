@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JAN 2016 14:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  27 JAN 2016 18:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -249,11 +249,7 @@ File: babel.def 2014/09/25 3.9l Babel common definitions
 (/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty
 \bigstrutjot=\dimen124
 )
-(./gecco-2016.aux
-
-LaTeX Warning: Label `smac-par2' multiply defined.
-
-)
+(./gecco-2016.aux)
 \openout1 = `gecco-2016.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
@@ -268,7 +264,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
 LaTeX Font Info:    ... okay on input line 54.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count112
 \scratchdimen=\dimen125
@@ -367,85 +364,58 @@ hod
  []
 
 [2]
-Overfull \hbox (5.77666pt too wide) in paragraph at lines 358--359
-[]\T1/aer/m/n/9 For the Re-ducedG-AModel and the Emp-ReducedGAModel,
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (14.97415pt too wide) in paragraph at lines 369--380
+ [] 
  []
 
 
-Overfull \hbox (9.19695pt too wide) in paragraph at lines 394--395
+Overfull \hbox (5.77666pt too wide) in paragraph at lines 383--384
+[]\T1/aer/m/n/9 For the Re-ducedG-AModel and the Emp-ReducedGAModel,
+ []
+
+[3]
+Overfull \hbox (2.84964pt too wide) in paragraph at lines 413--414
+[]\T1/aer/m/n/9 The Re-ducedG-AModel, which rep-re-sents the idea of chang-
+ []
+
+
+Overfull \hbox (9.19695pt too wide) in paragraph at lines 436--437
 []\T1/aer/m/n/9 The Emp-GAModel uses $\OML/cmm/m/it/9 ^^V\OT1/cmr/m/n/9 (\OML/c
 mm/m/it/9 x; y\OT1/cmr/m/n/9 )$ \T1/aer/m/n/9 as de-fined for the GAModel,
  []
 
-[3] [4]
-Overfull \hbox (5.86656pt too wide) in paragraph at lines 507--508
-[]\T1/aer/m/n/9 Parameter tun-ning is a com-monly prac-ticed ap-proach which
- []
-
-
-LaTeX Warning: Reference `smac-par' on page \thepage  undefined on input line 5
-14.
-
-
-Overfull \hbox (28.9472pt too wide) in paragraph at lines 516--517
-[]\T1/aer/m/n/9 EXPLICAR A QUES-TAO DA EX-PLI-CA-CAO DOS PARAMET-
- []
-
-
-Overfull \hbox (26.25175pt too wide) in paragraph at lines 522--556
- [] 
- []
-
-
-Overfull \hbox (26.25175pt too wide) in paragraph at lines 563--597
- [] 
- []
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[5] (./gecco-2016.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6])
-[7
-
-] (./gecco-2016.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[4] [5] (./gecco-2016.bbl) [6] (./gecco-2016.aux) ) 
 Here is how much of TeX's memory you used:
- 3647 strings out of 493089
- 47563 string characters out of 6134842
- 140623 words of memory out of 5000000
- 7012 multiletter control sequences out of 15000+600000
+ 3644 strings out of 493089
+ 47505 string characters out of 6134842
+ 128575 words of memory out of 5000000
+ 7009 multiletter control sequences out of 15000+600000
  53836 words of font info for 76 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,15n,35p,791b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/tex
-live/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-di
-st/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/local/texlive/2015/texmf-dist/font
-s/type1/urw/helvetic/uhvr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times
-/utmr8a.pfb>
-Output written on gecco-2016.pdf (7 pages, 210486 bytes).
+ 41i,15n,35p,848b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/tex
+mf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
+e1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uh
+vb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pf
+b></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on gecco-2016.pdf (6 pages, 202472 bytes).
 PDF statistics:
- 89 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 84 PDF objects out of 1000 (max. 8388607)
+ 60 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

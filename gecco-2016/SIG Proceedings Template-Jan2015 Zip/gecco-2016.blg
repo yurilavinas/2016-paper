@@ -4,45 +4,45 @@ The top-level auxiliary file: gecco-2016.aux
 The style file: abbrv.bst
 Database file #1: bib.bib
 Warning--empty journal in omori1895after
-You've used 29 entries,
+You've used 26 entries,
             2118 wiz_defined-function locations,
-            694 strings with 9958 characters,
-and the built_in function-call counts, 10527 in all, are:
-= -- 1057
-> -- 517
-< -- 10
-+ -- 202
-- -- 172
-* -- 763
-:= -- 1736
-add.period$ -- 91
-call.type$ -- 29
-change.case$ -- 173
+            680 strings with 9289 characters,
+and the built_in function-call counts, 9422 in all, are:
+= -- 942
+> -- 463
+< -- 9
++ -- 181
+- -- 154
+* -- 689
+:= -- 1555
+add.period$ -- 81
+call.type$ -- 26
+change.case$ -- 154
 chr.to.int$ -- 0
-cite$ -- 30
-duplicate$ -- 393
-empty$ -- 780
-format.name$ -- 172
-if$ -- 2209
+cite$ -- 27
+duplicate$ -- 351
+empty$ -- 699
+format.name$ -- 154
+if$ -- 1973
 int.to.chr$ -- 0
-int.to.str$ -- 29
-missing$ -- 28
-newline$ -- 147
-num.names$ -- 60
-pop$ -- 163
+int.to.str$ -- 26
+missing$ -- 26
+newline$ -- 132
+num.names$ -- 54
+pop$ -- 145
 preamble$ -- 1
-purify$ -- 143
+purify$ -- 128
 quote$ -- 0
-skip$ -- 295
+skip$ -- 264
 stack$ -- 0
-substring$ -- 641
-swap$ -- 97
-text.length$ -- 10
+substring$ -- 575
+swap$ -- 85
+text.length$ -- 9
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 114
+type$ -- 102
 warning$ -- 1
-while$ -- 108
-width$ -- 31
-write$ -- 325
+while$ -- 97
+width$ -- 28
+write$ -- 291
 (There was 1 warning)

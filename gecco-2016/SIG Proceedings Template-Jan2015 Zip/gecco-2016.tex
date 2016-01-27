@@ -287,22 +287,29 @@ All forecast models proposed in this paper are based in the Collaboratory for th
 
 Each individual has its own representation of the framework based on different perceptions of what are the best aspects of the framework. 
 
-The population is trained on earthquake event data for a training period, which is anterior to the target test period. After completing the evalution limit, the best individual is chosen to be the final forecast.
- 
-icio\subsection{1-year Models}
-In the CSEP framework, a forecast model uses one common format in the literature,	 which is a gridded rate forecast~\cite{zechar2010evaluating}. For this format a geographical region, during a start date and an end date is divided in sections, the bins. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval, considered to be of one year for this study~\cite{ecta14}. 
+The population is trained on earthquake event data for a training period, which is anterior to the target test period. After completing the evalution limit, the best individual is chosen to be the final forecast. 
+\subsection{1-year Models}
+The CSEP framework, a forecast model uses a gridded rate forecast~\cite{zechar2010evaluating}, one common format in the literature. For this format a geographical region is divided in sections, bins, during a start date and an end date. The forecast will estimate the number (and sometimes the magnitude) of earthquakes that happens in this target region, during the target time interval. For this study we considered the target time interval of one year~\cite{ecta14}. 
 
-Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the forecast models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks.
+Large and independent earthquakes, also known as mainshocks, are followed by a wave of others earthquakes, the aftershocks~\cite{schorlemmer2010first}. Hence there is no physical measurement to identify mainshocks and its aftershocks~\cite{schorlemmer2010first}, we divided the forecast models in two groups: the ones that only forecasts mainshocks and those that forecast both mainshocks and aftershocks. 
+
+Both classes forecast earthquakes with magnitude greater than 3.0 for every scenario proposed, with a binning of 0.1, here named as cells to avoid conflicts with the location bin. That results in magnitude cells of [3.0, 3.1), [3.1, 3.2), until [9.9, 10). That was the only declustering procudered used for the all methods.
 
 \subsection{Genome Representation}\label{genome}
-The GAModel each individual represents an entire forecast model~\cite{ecta14}. For the ReducedGAModel and each individual represents a subarea of the forecast model. This subarea is related to earthquakes past events locations only, so the genome size is usually smaller than the one used in the GAModel and the Emp-GAModel. 
+In the GAModel each individual represents an entire forecast model. Each gene of the individual is a real value, corresponding to one bin in the desired model. The values are sampled from the interval [0, 1). These real values are converted to a integer forecast, we use the same modification of the Poisson deviates extraction algorithm used for the GAModel~\cite{ecta14}.
+
+In the ReducedGAModel, each individual is a list of a subregion of the forecast model. This list initially is a refers to bins where earthquake events happened in the past. During the develop of the ReducedGAModel, the list may refer to positions that never had occurrences before. Each element of the list, a gene, also contains one real value between [0,1). In the initial population, this real values are sampled from a uniform population. When needed, every real value is converted to a integer forecast, as in the GAModel~\cite{ecta14}. 
+
+To generate the forecast model we need to do an intermediate step. We map every location from the list with a bin in the forecast map. 
+
+The genome size is usually smaller than the one used in the GAModel and the Emp-GAModel, once the amount of subregions where earthquakes with magnitude above 3.0 happened for any given area is smaller then the total number of genes of the individual. 
 
 The Emp-ReducedGAModel and the Emp-GAModel differs only from the ReducedGAmodel and from the GAmodel, respectively, by the use of equations after the forecast is provided. This means that the theirs genome representation are the same as the GAModel and the ReducedGAModel,correspondingly.
 
 For all methods, the genome is a real valued array X, where each element corresponds to one bin in the desired model (the number of bins n is defined by the problem). Each element $x_i \in X$ takes a value from $[0,1)$. In the initial population, these values are sampled from a uniform distribution. For more details of the genome represatation, please refer to~\cite{ecta14}.
 \subsection{Fitness Function}
-For the fitness function we used the log-likelihood value. The fittest individual among all the others, is preserved in the next generation, to make the solution of one generation as good as the its last generation.
-The bins, a gene (a element) of the genome representation, $b_n$, define the set $\beta$ and $n$ is the size of the set $\beta$:
+All the methods use the log-likelihood value, for the fitness function. The fittest individual among all the others, is preserved in the next generation, to make the solution of one generation as good as the its last generation.
+The bins, a gene of the genome representation, $b_n$, define the set $\beta$ and $n$ is the size of the set $\beta$:
 
 				\begin{equation} 
 					\beta := {b_1,b_2,...,b_n},n = |\beta|
@@ -321,7 +328,7 @@ The probability values of the model $j$,  expressed by the symbol $\Lambda$, is 
   ;\lambda_i^j := \lambda_i^j(b_i),b_i \in \beta
 \end{equation}
 		
-The vector of earthquake quantity expectations is defined as: earthquake by time. The $\Omega$ vector é composed by observations $\omega_i$ per bin  $b_i$, as the  $\Lambda$ vector:
+The vector of earthquake quantity expectations is defined as: earthquake by time. The $\Omega$ vector is composed by observations $\omega_i$ per bin  $b_i$, as the  $\Lambda$ vector:
 
 \begin{equation}
 \Omega = 
@@ -353,41 +360,76 @@ The joint probability is the product of the likelihood of each bin, so the logar
 The fitness function is a coded version of the equation ~\ref{log-like}. It uses the probabilities of the bins of each individual of model for the $\lambda$ values. 
 
 \subsection{Evolutionary Operators}
-Both the GAModel and the Emp-GAModel uses a combination of operators made available by the Distributed Evolutionary Algorithms in Python (DEAP)~\cite{DeRainville:2012:DPF:2330784.2330799}. We use the One Point Crossover for the crossover operator, for the mutation operator, the Polynomial Bounded Mutation and for selection, we use Elitism and Tournament selection, with size 3.
+Both the GAModel and the Emp-GAModel use a combination of operators made available by the Distributed Evolutionary Algorithms in Python (DEAP)~\cite{DeRainville:2012:DPF:2330784.2330799}. We used the One Point Crossover for the crossover operator, the Polynomial Bounded Mutation for the mutation operator and for selection, we used Tournament selection and Elitism. The parameters are described in the Table~\ref{GAParameters}.
 
-For the ReducedGAModel and the Emp-ReducedGAModel, the only different operator is the mutation fuction. We use a simple mutation operator which samples entirely two new valus. The first, is a new real value from [0,1) and the seconde one, a new integer value from [0,X), where X is the maximum size of the genome.
+\begin{table}[!ht]
+  \caption{Parameters used in GAModel and Emp-GAModel}
+  \label{GAParameters}
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Population Size & 500\\
+    Generation Number & 100\\
+    Elite Size & 1\\
+    Tournament Size & 3\\
+    Crossover Chance & 0.9\\
+    Mutation Chance (individual) & 0.1\\
+	Polynomial Bounded parameters & eta = 1, low = 0, up = 1\\
+    \hline    
+  \end{tabular}
+  \end{center}
+\end{table}
 
+For the ReducedGAModel and the Emp-ReducedGAModel, the only different operator is the mutation fuction. We use a simple mutation operator which samples entirely two new values, both sampled from uniform distributions. The first, is a new real value from [0,1) and the seconde one, a new integer value from [0,X), where X is the maximum length of the genome. For the parameters see Table~\ref{GAHParameters}.
 
+\begin{table}[!ht]
+  \caption{Parameters used in GAModel and Emp-GAModel}
+  \label{GAHParameters}
+  \begin{center}
+  \begin{tabular}{|l|r|}
+    \hline
+    Population Size & 500\\
+    Generation Number & 100\\
+    Elite Size & 1\\
+    Tournament Size & 3\\
+    Crossover Chance & 0.9\\
+    Mutation Chance (individual) & 0.1\\
+    \hline    
+  \end{tabular}
+  \end{center}
+\end{table}
 
 \subsection{Mainshock Models}
-The GAModel is purely based on the framework suggested by the CSEP. In it, one forecast is defined as a place for a specfic time and is divided in bins. Each bin represents a geographical interval. The whole target area of study is covered by these bins and represents the $\mu(x,y)$, the background intensity~\cite{zhuang2004analyzing}. In the GAModel, each possible solution is represented as an entire forecast model.
+The GAModel is completely based on the framework suggested by the CSEP. In it, one forecast is defined as a region in a specfic time interval and is divided in bins. Each bin represents a geographical interval. The whole target area of study is covered by a group of these bins where each bin has an earthquake forecast value. This groups of bin represent the $\mu(x,y)$, the background intensity~\cite{zhuang2004analyzing}. In the GAModel, each possible solution is represented as an entire forecast model.
 
 In this context the GAModel is considered as one method to generate space-rate-time forecasts. It also could be described as:
 
 \begin{equation}\label{gamodel}
- \lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)
+ \Lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)
 \end{equation}
 
-where you can denote the number of earthquakes forecast in a bin as $\lambda(t,x,y)$~\cite{zechar2010evaluating} given that $\Upsilon_t$ is the earthquake observation data up to time $t$.% Which leads to $\mu(x,y)$ the background intensity, a function of space, but not of time~\cite{zhuang2004analyzing}.
+where you can denote the number of earthquakes forecast in all bins as $\Lambda(t,x,y)$~\cite{zechar2010evaluating} given that $\Upsilon_t$ is the earthquake observation data up to time $t$.% Which leads to $\mu(x,y)$ the background intensity, a function of space, but not of time~\cite{zhuang2004analyzing}.
 
-The ReducedGAModel, which represents the first ideia (see~\ref{intro}), is a method described as the GAModel, but each possible solution represents a fraction of the forecast where we expect to find especific risk areas. The GAModel defines a expected number of earthquakes for every single bin in the target region. That could lead to exhaustive and, sometimes worthless, searches. That is caused by the number of bins in the forecast and also because some in some bins there are no earthquake occurances in the observation data. To minimize this, the ReducedGAModel only define expected number of earthquakes in bins that already had some occurance in the past, giving some sort of guideline to the GA. 
+The ReducedGAModel, which represents the idea of changing the candidates solution representation (see Section~\ref{intro}), is a method with a similar description of the GAModel. The difference is that, in the ReducedGAModel each possible solution represents only a fraction of the forecast where we expect to find especific risk areas. 
 
-To make it clear, we use the same example as the one used in ~\cite{ecta14}.The "Kanto" region, one of the four areas used in this study, is divided into 2025 bins (a grid of 45x45 squares). Each bin has an area of approximately $25km^2$. The GAModel then calculates an expected number of earthquakes for every bin on a determinated time interval, so the GA searches for good values in 2025 bins. 
+The GAModel defines a expected number of earthquakes for every single bin in the target region. That could lead to exhaustive and, sometimes worthless, searches. That is caused by the number of bins in the forecast and also because some in some bins there are no earthquake occurances in the observation data. To minimize this, the ReducedGAModel only define expected number of earthquakes in bins that already had some occurance in the past, giving a direction to where the GA should search. 
 
-The ReducedGAModel will first obtain the position of past occurances and will calculate some expected number of earthquakes for only the bins related to those positions. For example, if there are 10 bins with occurances in Kanto in the last year, it will make the GA search good values for only those 10 bins, leaving the other 2015 bins with the value zero, representing zero occurances. It is important to highlight that in the worst case, it will make the same amount of searches as the GAModel.
+To make it clear, we use the same example as the one used in~\cite{ecta14}. The "Kanto" region, one of the four areas used in both studies, is divided into 2025 bins (a grid of 45x45 squares). Each bin has an area of approximately $25km^2$. The GAModel then calculates an expected number of earthquakes for every bin on a determinated time interval, so the GA searches for good values in 2025 bins. 
+
+The ReducedGAModel will first obtain the position of past occurances. Then it will calculate some expected number of earthquakes only for the bins related to those positions. During the development of this method, these positions may vary, including positions that never had earthquake events before. That is important to add some variation to the method. For example, if there are 10 bins with occurances in "Kanto" in the last year, it will make the GA start searching for good values for only those 10 bins, leaving the other 2015 bins empty, representing zero occurances. It is important to highlight that in the worst case, it will make the same amount of searches as the GAModel. The final forecast model will maintain the amount of bins with occurrance, but the number of events for every bin and their location may change. 
 
 % (it is possible that an bin had more the one occurance, therefore that number will drop. 
 
 \subsection{Mainshock+Aftershock Models}
-Hence earthquakes cluster in space and inspired by the space-time epidemic-type aftershock sequence (ETAS), the Emp-GAModel, represents the second ideia (see~\ref{intro}) and is described as:
+Hence earthquakes cluster in space and inspired by the space-time epidemic-type aftershock sequence (ETAS), the Emp-GAModel, represents the ideia of associating the GA with empirical laws  (see Section~\ref{intro}). It is described as:
 
 \begin{equation}\label{reducedgamodel}
-	\lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)J(M)
+	\Lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)J(M)
 \end{equation}
 
-%TODO: adicionar RI nanjo no lugar da F
+TODO: adicionar RI nanjo no lugar da F
 \begin{equation}\label{emp-model}
- \lambda(t,x,y|\Upsilon_t) = \mu(x,y) + \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)F
+ \Lambda(t,x,y|\Upsilon_t) = \mu(x,y) + \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)F
 \end{equation}
 %TODO: explicar o Upsilon
 
@@ -397,38 +439,41 @@ The Emp-GAModel uses $\mu(x,y)$ as defined for the GAModel, so it calculates an 
 	g(t)= \dfrac{(p-1)}{c(1+ \dfrac{t}{c})^(-p)}
 \end{equation}
 
-In the paper~\cite{utsu1995centenary}, Utsu says that most p and c values, for various earthquake data sets fall in the range between 0.9 and 1.4, and between 0.003 and 0.3 days, respectively. These values were based on the Davidon-Fletcher-Powell optimization procedure and used in ETAS~\cite{utsu1995centenary}. For the experiments done for this paper, we choose the values of $1.3$ for $p$ and $0.003$ for $c$, arbitrarily.
+In the paper~\cite{utsu1995centenary}, Utsu says that most p and c values, for various earthquake data sets fall in the range between 0.9 and 1.4, and between 0.003 and 0.3 days, respectively. These values were based on the Davidon-Fletcher-Powell optimization procedure and used in ETAS~\cite{utsu1995centenary}.
 
-We count the number of aftershocks which occur within a month after each main shock. If the constants c and p in the modified Omori formula, Eq. (1) are common in all the sequences, varying the time interval only causes an increase or decrease of the aftershock number by a constant ratio. According to Utsu (1969), the mean p-value in Eq. (1) is 1.3 and the mean c-value is 0.3 days. We set the time interval at one month. If it is too short, the aftershock number becomes too small. On the other hand, if it is too long, we may also count the events due to background activity. When an event is a doublet, we take one-month interval from the second event.
+Based on paper~\cite{yamanaka1990scaling}, we set the values of $1.3$ for $p$ and $0.003$ for $c$ for our the experiments. Following the statement make in this report, we set the time interval $t$ between a mainshock and its aftershocks at one month. The statement says that if  the $t$ value is too short, the number of aftershocks is too small, but if it is too big, we may also consider background activity.
 
-For $K(M_i)$, the total amount of triggered events, we count aftershocks within a calculated aftershock area, $A$, using the formula, where $M_c$ is the magnitude threshold:
+For $K(M_i)$, the total amount of triggered events, we count aftershocks within a given area, $A$, using the following formula, where $M_c$ is the magnitude threshold:
 
 \begin{equation}\label{triggered}
  K(M_i) = A\ exp([\alpha(M-M_c)])
 \end{equation}
 
-From~\cite{ogata2006space}, states alpha as the inverse of the magnitude of an event, or $magnitide^{-1}$. To obtain A, the following equation from~\cite{yamanaka1990scaling}, was used:
+In the paper~\cite{ogata2006space}, it states that $\alpha$ should be equal to the inverse of the magnitude of an event, or $magnitide^{-1}$. To obtain $A$, the following equation from~\cite{yamanaka1990scaling}, was used:
 
 \begin{equation}
 A = e^{(1.02M -4)}
 \end{equation}
 
-and lastly, the $J(M)$ is a simulation of the event  magnitude by Gutenberg-Richter's Law, using $1$ as the value of $\beta$ ~\cite{helmstetter2003predictability}:
 
-\begin{equation}\label{gut-ritcher}
-J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
-\end{equation}
 
-At last, the Emp-ReducedGAModel is a mix between the two ideias, so it is represented as the Emp-GAModel but its candidates take the same form as the ones in the ReducedGAModel.
+%TODO: maybe no
+and lastly, the $J(M)$ is a simulation of the event magnitude by Gutenberg-Richter's Law, using Add SAPP% $1$ as the value of $\beta$ ~\cite{helmstetter2003predictability}:
+%
+%\begin{equation}\label{gut-ritcher}
+%J(M) = \beta e^{-\beta(M-M_c)}, M \geq M_c
+%\end{equation}
+
+At last, the Emp-ReducedGAModel is a mix between the ideas in the ReducedGAModel method and the Emp-GAModel, which means that its genome representation is equal to the Emp-GAModel but its candidates have same list of locations format, as in the ReducedGAModel.
 
 %TODO: Move this whole section to exp (where there?)
 \section{Tests for evaluating Models}\label{Tests}
 
-In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake} is proposed some statistical tests that are used in this study to compare and evaluate the forecast models, developed by the The Regional Earthquake Likelihood Models (RELM). These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
+In the paper {\it Earthquake Likelihood Model Testing}~\cite{schorlemmer2007earthquake}, it is proposed some statistical tests that are used in this study, developed by the The Regional Earthquake Likelihood Models (RELM).They were used to compare and evaluate the every forecast models. These tests are based on the log-likelihood score that compares the probability of the model with the observed events. 
 
 To evalute the data-consistency of the forecast models we used the N-Test, the Number Test,  and the L-Test, or Likelihood Test. These tests fall are significance tests. Therfore, assuming a given forecast model as the null hypothesys, the distribuition of an observable test is simulated. If the observed test statistic falls into the upper or lower tail of this distribuition, the forecast is rejected~\cite{schorlemmer2010first}.
 
-To be able to compare the model that passed the N-Test and the L-test, the R-Test, hypotheses Comparison Test is used. It calculates the relative performance of a model, by comparing the Log-likelihood values between two forecast models.
+To be able to compare the model that passed the N-Test and the L-test, the R-Test, the hypotheses Comparison Test, is used. It calculates the relative performance of a model, by comparing the Log-likelihood values between two forecast models.
 
 \subsection{Likelihood Test or L-Test}
  
@@ -451,21 +496,21 @@ The analisys of the results can be splited into 3 categories, as follows:
 It is important to highlight that no model should be reject in case 3, if based only on the L-Test. In this case the consistency can or cannot be real, therefore these model should be tested by the N-Test so that further conclusions can be done.
 
 \subsection{Number test or N-Test}
-The N(umber)-Test also analises the consistency of the model, but here, it compares the number os observations with the number of events of the simulations. This test is necessary to supply the underpredicting problem, which may pass unnotecied by the L-Test. 
+The N(umber)-Test also analises the consistency of the model, but it compares the number os observations with the number of events of the simulations. This test is necessary to supply the underpredicting problem, which may pass unnoticed by the L-Test. 
 
-This mesures is estimated by the fraction of the total number of observations by the total number of observations of the model.
+This mesure is estimated by the fraction of the total number of observations by the total number of observations of the model.
 
-As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor few of them.
+As the L-test, if the number of events falls near the half of the values of the distruition, then the model is consistent with the observation, nor estimating too much events nor too few of them.
 
 \subsection{Hypotheses Comparison Test or R-Test}
 
-The Hypotheses Comparison, or the R(atio)-Test, compares two forecast models against themselves. The log-likelihood is calculted for both models and then the difference between, the observed likelihood ratio, this value indicates which one of the model better fits the observations. 
+The Hypotheses Comparison, or the R(atio)-Test, compares two forecast models against themselves. The log-likelihood is calculted for both models and then the difference between them is calculated, named the observed likelihood ratio. This value indicates which one of the model better fits the observations. 
 
 The likelihood ratio is calculated for each simulated catalog. If the fraction of simulated likelihood ratios less than the observed likelihood ratio is very small, the model is reject.  To make this test impartial, not given an advantage to any model, this procedure is applied symmetrically~\cite{schorlemmer2010first}.
 
 
 \subsection{Evaluation}\label{eval}
-The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, it is compared with other forecast models, which also were not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.
+The evaluation process is made as follow: First, the data-consitency is tested by the L-Test and the R-test. If the model passes these tests, meaning that it was not rejected by them, they ares compared with other forecast models, which were also not reject, with the R-Test. The model that best fits the R-Test is then chose as the best model~\cite{schorlemmer2007earthquake}.
 
 %data, design, comparacao, regions, year(s)
 %para o só ga ,boxplot e t-test tem que ver se tem vantagem
@@ -501,102 +546,102 @@ The second approach is to using the Log-likelihood values obtained by each of th
 
 All forecast models here presented are stochastic methods. Therefore, to be able to compare test the statistical significance of the results, we run each forecast model 10 times. That means that all results showed are the mean of these 10 executions.
 
-\subsection{Parameter Tuning}
-%All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. 
-
-Parameter tunning is a commonly practiced approach which aims to find optimum parameters values before the run of a algorithm. Later this algorithm is executed with these values, which remain fixed during the run~\cite{eiben2011parameter}.
-
-%review this
-To find a good set of parameters for the all the forecast models algorithms, the pySMAC, a Python wrapper for the hyperparameter optimization tool Sequential Model- based Algorithm Configuration (SMAC)~\cite{hutter2010sequential}, was used.
-
-SMAC is an algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by generating a candidate configuration and evaluating the configuration on the set of the training instances~\cite{aranha2015optimization}. 
-
-The configuration which best fits each one of the forecast models algorithm is then chosen to be used as the set of values for the its algorithms run. For all algorithms present here, the default control parameter values (which are based on the values applied in the GAModel~\cite{ecta14}), the ranges for the parameters (arbitrarily chosen), as well as the values found by SMAC, are shown in Table~\ref{smac-par} for GAModel and Emp-GAmodel and in Table~\ref{smac-par2} for ReducedGAModel and Emp-ReducedGAModel.
-
-EXPLICAR A QUESTAO DA EXPLICACAO DOS PARAMETROS $N_GEN * POP = CONST$
-
-
-\begin{table}[!h]
-  \begin{center}
-  \caption{The default control parameter values and the best set of parameters found by tunning the algorithm with SMAC for the ReducedGAModel and the Emp-ReducedGAModel}
-\begin{tabular}{ |c|c|c|c|c| }
-\hline
-%\multicolumn{5}{ |c| }{SMAC configuration and values for GAModel and Emp-GAModel} \\
-\hline
-\multirow{5}{*}{Kanto}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500 &\\
- & Generation Number & [50,250] & 100 & 100 \\ \hline
-\multirow{4}{*}{Kansai}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500 &\\\ 
- & Generation Number & [50,250] & 100 & 100 \\ \hline
-\multirow{4}{*}{Tohoku}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500 &\\
- & Generation Number & [50,250] & 100 & 100 \\ \hline
-\multirow{4}{*}{East Japan}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.8826\\
- & Mutation Chance & [0,1] & 0.1 & 0.1724\\
- & Population Size & N/A & 500 &\\
- & Generation Number & [50,250] & 100 & 106 \\ \hline
-\hline
-\end{tabular}
-  \end{center}
-  \label{smac-par2}
-\end{table}
-
-\begin{table}[!h]
-  \begin{center}
-  \caption{The default control parameter values and the best set of parameters found by tunning the algorithm with SMAC for the ReducedGAModel and the Emp-ReducedGAModel}
-\begin{tabular}{ |c|c|c|c|c| }
-\hline
-%\multicolumn{5}{ |c| }{SMAC configuration and values for GAModel and Emp-GAModel} \\
-\hline
-\multirow{5}{*}{Kanto}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500 &\\
- & Generation Number & [50,250] & 100 & 100 \\ \hline
-\multirow{4}{*}{Kansai}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500 &\\\ 
- & Generation Number & [50,250] & 100 & 100 \\ \hline
-\multirow{4}{*}{Tohoku}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.9\\
- & Mutation Chance & [0,1] & 0.1 & 0.1\\
- & Population Size & N/A & 500 &\\
- & Generation Number & [50,250] & 100 & 100 \\ \hline
-\multirow{4}{*}{East Japan}
- & Parameter & Range & Default & Tuned \\
- \cline{2-5}
- & Crossover Chance & [0,1] & 0.9 & 0.8826\\
- & Mutation Chance & [0,1] & 0.1 & 0.1724\\
- & Population Size & N/A & 500 &\\
- & Generation Number & [50,250] & 100 & 106 \\ \hline
-\hline
-\end{tabular}
-  \end{center}
-  \label{smac-par2}
-\end{table}
+%\subsection{Parameter Tuning}
+%%All 4 algorithms were tuned using the Sequential Model- based Algorithm Configuration, SMAC [7]. 
+%
+%Parameter tunning is a commonly practiced approach which aims to find optimum parameters values before the run of a algorithm. Later this algorithm is executed with these values, which remain fixed during the run~\cite{eiben2011parameter}.
+%
+%%review this
+%To find a good set of parameters for the all the forecast models algorithms, the pySMAC, a Python wrapper for the hyperparameter optimization tool Sequential Model- based Algorithm Configuration (SMAC)~\cite{hutter2010sequential}, was used.
+%
+%SMAC is an algorithm configurator takes as input an algorithm executable, a formal description of the parameters for the algorithm, and a set of training problem instances. It searches the space of possible parameter values by generating a candidate configuration and evaluating the configuration on the set of the training instances~\cite{aranha2015optimization}. 
+%
+%The configuration which best fits each one of the forecast models algorithm is then chosen to be used as the set of values for the its algorithms run. For all algorithms present here, the default control parameter values (which are based on the values applied in the GAModel~\cite{ecta14}), the ranges for the parameters (arbitrarily chosen), as well as the values found by SMAC, are shown in Table~\ref{smac-par} for GAModel and Emp-GAmodel and in Table~\ref{smac-par2} for ReducedGAModel and Emp-ReducedGAModel.
+%
+%EXPLICAR A QUESTAO DA EXPLICACAO DOS PARAMETROS $N_GEN * POP = CONST$
+%
+%
+%\begin{table}[!h]
+%  \begin{center}
+%  \caption{The default control parameter values and the best set of parameters found by tunning the algorithm with SMAC for the ReducedGAModel and the Emp-ReducedGAModel}
+%\begin{tabular}{ |c|c|c|c|c| }
+%\hline
+%%\multicolumn{5}{ |c| }{SMAC configuration and values for GAModel and Emp-GAModel} \\
+%\hline
+%\multirow{5}{*}{Kanto}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.9\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1\\
+% & Population Size & N/A & 500 &\\
+% & Generation Number & [50,250] & 100 & 100 \\ \hline
+%\multirow{4}{*}{Kansai}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.9\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1\\
+% & Population Size & N/A & 500 &\\\ 
+% & Generation Number & [50,250] & 100 & 100 \\ \hline
+%\multirow{4}{*}{Tohoku}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.9\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1\\
+% & Population Size & N/A & 500 &\\
+% & Generation Number & [50,250] & 100 & 100 \\ \hline
+%\multirow{4}{*}{East Japan}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.8826\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1724\\
+% & Population Size & N/A & 500 &\\
+% & Generation Number & [50,250] & 100 & 106 \\ \hline
+%\hline
+%\end{tabular}
+%  \end{center}
+%  \label{smac-par2}
+%\end{table}
+%
+%\begin{table}[!h]
+%  \begin{center}
+%  \caption{The default control parameter values and the best set of parameters found by tunning the algorithm with SMAC for the ReducedGAModel and the Emp-ReducedGAModel}
+%\begin{tabular}{ |c|c|c|c|c| }
+%\hline
+%%\multicolumn{5}{ |c| }{SMAC configuration and values for GAModel and Emp-GAModel} \\
+%\hline
+%\multirow{5}{*}{Kanto}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.9\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1\\
+% & Population Size & N/A & 500 &\\
+% & Generation Number & [50,250] & 100 & 100 \\ \hline
+%\multirow{4}{*}{Kansai}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.9\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1\\
+% & Population Size & N/A & 500 &\\\ 
+% & Generation Number & [50,250] & 100 & 100 \\ \hline
+%\multirow{4}{*}{Tohoku}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.9\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1\\
+% & Population Size & N/A & 500 &\\
+% & Generation Number & [50,250] & 100 & 100 \\ \hline
+%\multirow{4}{*}{East Japan}
+% & Parameter & Range & Default & Tuned \\
+% \cline{2-5}
+% & Crossover Chance & [0,1] & 0.9 & 0.8826\\
+% & Mutation Chance & [0,1] & 0.1 & 0.1724\\
+% & Population Size & N/A & 500 &\\
+% & Generation Number & [50,250] & 100 & 106 \\ \hline
+%\hline
+%\end{tabular}
+%  \end{center}
+%  \label{smac-par2}
+%\end{table}
 
 
 %5 https://github.com/automl/pysmac
