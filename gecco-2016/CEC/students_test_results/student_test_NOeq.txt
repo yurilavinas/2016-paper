@@ -1,0 +1,241 @@
+sem hibrid
+
+mu é a media do GAModel2006against the list method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = -3.0153, df = 9, p-value = 0.01459
+alternative hypothesis: true mean is not equal to -2319.016
+95 percent confidence interval:
+ -2882.812 -2399.476
+sample estimates:
+mean of x 
+-2641.144 
+
+mu é a media do GAModel2006against the list method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = -0.58733, df = 9, p-value = 0.5714
+alternative hypothesis: true mean is not equal to -2924.674
+95 percent confidence interval:
+ -3524.068 -2572.372
+sample estimates:
+mean of x 
+ -3048.22 
+
+mu é a media do GAModel2006against the list method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = -3.3173, df = 9, p-value = 0.008979
+alternative hypothesis: true mean is not equal to -1007.4
+95 percent confidence interval:
+ -1248.084 -1052.916
+sample estimates:
+mean of x 
+  -1150.5 
+
+mu é a media do GAModel2006against the list method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -2.4732, df = 9, p-value = 0.03538
+alternative hypothesis: true mean is not equal to -1631.721
+95 percent confidence interval:
+ -1988.407 -1647.617
+sample estimates:
+mean of x 
+-1818.012 
+
+mu é a media do GAModel2007against the list method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.663, df = 9, p-value = 0.1307
+alternative hypothesis: true mean is not equal to -2344.4
+95 percent confidence interval:
+ -6310.673 -1738.927
+sample estimates:
+mean of x 
+  -4024.8 
+
+mu é a media do GAModel2007against the list method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = -0.62569, df = 9, p-value = 0.5471
+alternative hypothesis: true mean is not equal to -2847.994
+95 percent confidence interval:
+ -3688.455 -2371.728
+sample estimates:
+mean of x 
+-3030.092 
+
+mu é a media do GAModel2007against the list method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = -2.5663, df = 9, p-value = 0.03037
+alternative hypothesis: true mean is not equal to -1001.57
+95 percent confidence interval:
+ -1233.012 -1016.148
+sample estimates:
+mean of x 
+ -1124.58 
+
+mu é a media do GAModel2007against the list method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.6909, df = 9, p-value = 0.1251
+alternative hypothesis: true mean is not equal to -1627.575
+95 percent confidence interval:
+ -2029.060 -1569.551
+sample estimates:
+mean of x 
+-1799.305 
+
+mu é a media do GAModel2008against the list method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.9097, df = 9, p-value = 0.08851
+alternative hypothesis: true mean is not equal to -2387.29
+95 percent confidence interval:
+ -2928.039 -2341.602
+sample estimates:
+mean of x 
+-2634.821 
+
+mu é a media do GAModel2008against the list method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.63, df = 9, p-value = 0.1375
+alternative hypothesis: true mean is not equal to -3109.329
+95 percent confidence interval:
+ -23118.6196    140.6205
+sample estimates:
+mean of x 
+   -11489 
+
+mu é a media do GAModel2008against the list method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.402, df = 9, p-value = 0.1944
+alternative hypothesis: true mean is not equal to -1061.076
+95 percent confidence interval:
+ -9481.7836   915.5643
+sample estimates:
+mean of x 
+ -4283.11 
+
+mu é a media do GAModel2008against the list method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -3.8088, df = 9, p-value = 0.004161
+alternative hypothesis: true mean is not equal to -1636.46
+95 percent confidence interval:
+ -1844.716 -1689.515
+sample estimates:
+mean of x 
+-1767.115 
+
+mu é a media do GAModel2009against the list method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = -2.0322, df = 9, p-value = 0.07267
+alternative hypothesis: true mean is not equal to -2343.101
+95 percent confidence interval:
+ -3217.099 -2296.303
+sample estimates:
+mean of x 
+-2756.701 
+
+mu é a media do GAModel2009against the list method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.2045, df = 9, p-value = 0.2591
+alternative hypothesis: true mean is not equal to -2899.786
+95 percent confidence interval:
+ -19865.083   2276.119
+sample estimates:
+mean of x 
+-8794.482 
+
+mu é a media do GAModel2009against the list method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = -2.6677, df = 9, p-value = 0.02572
+alternative hypothesis: true mean is not equal to -1001.9
+95 percent confidence interval:
+ -1623.192 -1053.008
+sample estimates:
+mean of x 
+  -1338.1 
+
+mu é a media do GAModel2009against the list method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -4.8954, df = 9, p-value = 0.0008531
+alternative hypothesis: true mean is not equal to -1636.571
+95 percent confidence interval:
+ -1760.996 -1682.346
+sample estimates:
+mean of x 
+-1721.671 
+
+mu é a media do GAModel2010against the list method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = -3.711, df = 9, p-value = 0.004837
+alternative hypothesis: true mean is not equal to -2455.091
+95 percent confidence interval:
+ -2958.343 -2577.159
+sample estimates:
+mean of x 
+-2767.751 
+
+mu é a media do GAModel2010against the list method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.3024, df = 9, p-value = 0.2251
+alternative hypothesis: true mean is not equal to -3605.962
+95 percent confidence interval:
+ -7602.612 -2529.835
+sample estimates:
+mean of x 
+-5066.223 
+
+mu é a media do GAModel2010against the list method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = 4.1365, df = 9, p-value = 0.002535
+alternative hypothesis: true mean is not equal to -1652.911
+95 percent confidence interval:
+ -1493.456 -1108.555
+sample estimates:
+mean of x 
+-1301.005 
+
+mu é a media do GAModel2010against the list method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.326, df = 9, p-value = 0.2175
+alternative hypothesis: true mean is not equal to -1641.526
+95 percent confidence interval:
+ -2334.438 -1460.749
+sample estimates:
+mean of x 
+-1897.594 

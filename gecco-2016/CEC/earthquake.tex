@@ -100,35 +100,35 @@ determine the Fault Model parameters of a earthquake.
 
 %TODO: Last part in somewhat bad
 %% CLAUS: A paper to CEC does not need a ``What is EC'' section
-\subsection{What is Evolutionary Computation And What are Genetic Algorithms}\label{EC}
-Evolutionary Computation (EC) is concerned with algorithms based on
-the Darwinian principles of natural selection. It may find, by try
-trial and error and based on a great amount of data, better solutions
-for problems that human beings may not find it easy to
-solve~\cite{koza2003genetic}. That could also be done without any
-domain knowledge about the problem to be
-controlled~\cite{Michie94machinelearning}.
-	
-The main goal of a Genetic Algorithm (GA), a EC technique, is to find
-approximated solutions in problems of search and optimization. Based
-on Koza~\cite{koza2003genetic}, GA are mechanism of search based on
-natural selection and genetic. They explore historical data to find
-optimum search points with some performance
-increment~\cite{Goldberg:1989:GAS:534133}.
-
-A GA uses those mechanisms to generate solutions to optimization and
-search problems. The first step is to create an initial population, a
-group of possible solutions, where each solution is called an
-individual. Those individuals have its fitness value estimated by a
-given function and those with greater fitness value are then chosen to
-reproduction. After some evaluations, we expect to find an optimum
-solution.
-
-Frequently, the initial population is randomly generated once it is
-common to ignore the main aspects that influence the algorithm
-performance. In other words, hence it is common to lack domain
-knowledge, the random population is a good way to start searching for
-optimum solutions.
+%\subsection{What is Evolutionary Computation And What are Genetic Algorithms}\label{EC}
+%Evolutionary Computation (EC) is concerned with algorithms based on
+%the Darwinian principles of natural selection. It may find, by try
+%trial and error and based on a great amount of data, better solutions
+%for problems that human beings may not find it easy to
+%solve~\cite{koza2003genetic}. That could also be done without any
+%domain knowledge about the problem to be
+%controlled~\cite{Michie94machinelearning}.
+%	
+%The main goal of a Genetic Algorithm (GA), a EC technique, is to find
+%approximated solutions in problems of search and optimization. Based
+%on Koza~\cite{koza2003genetic}, GA are mechanism of search based on
+%natural selection and genetic. They explore historical data to find
+%optimum search points with some performance
+%increment~\cite{Goldberg:1989:GAS:534133}.
+%
+%A GA uses those mechanisms to generate solutions to optimization and
+%search problems. The first step is to create an initial population, a
+%group of possible solutions, where each solution is called an
+%individual. Those individuals have its fitness value estimated by a
+%given function and those with greater fitness value are then chosen to
+%reproduction. After some evaluations, we expect to find an optimum
+%solution.
+%
+%Frequently, the initial population is randomly generated once it is
+%common to ignore the main aspects that influence the algorithm
+%performance. In other words, hence it is common to lack domain
+%knowledge, the random population is a good way to start searching for
+%optimum solutions.
 
 %TODO: Why 1-year?
 \section{The Forecast Models Using Genetic Algorithm}\label{Models}
@@ -142,7 +142,7 @@ different perceptions of what are the best aspects of the framework.
 
 The population is trained on earthquake event data for a training
 period, which is anterior to the target test period. After completing
-the evalution limit, the best individual is chosen to be the final
+the evaluation limit, the best individual is chosen to be the final
 forecast.
 
 \subsection{1-year Models}
@@ -395,15 +395,15 @@ Section~\ref{intro}). It is described as:
 	\Lambda(t,x,y,M|\Upsilon_t) = \mu(x,y)J(M)
 \end{equation}
 
-TODO: adicionar RI nanjo no lugar da F
+
 \begin{equation}\label{emp-model}
- \Lambda(t,x,y|\Upsilon_t) = \mu(x,y) + \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)F
+ \Lambda(t,x,y|\Upsilon_t) = \mu(x,y) + \displaystyle\sum_{t_i \in t} K(M_i)g(t-t_i)P(x,y)
 \end{equation}
 %TODO: explicar o Upsilon
 
 The Emp-GAModel uses $\mu(x,y)$ as defined for the GAModel, so it
 calculates an expected number of earthquakes for every bin in the
-target region. The Omori law, $g(t)$, which is considered one
+target region. P(x,y) calculates the position of the aftershocks with base on the origin of the mainshock. It is a simple space distribuition function, that alocates the aftershocks in one of the following posotions: upper, lower, left or right. It runs for a number of steps, getting futter from the origin at each step or as when there are no more events to be alocated. The Omori law, $g(t)$, which is considered one
 empirical formula of great
 success~\cite{zhuang2004analyzing}~\cite{utsu1995centenary}~\cite{omori1895after},
 is a power law that relates the earthquake occurance and its magnitude
@@ -565,14 +565,18 @@ model~\cite{schorlemmer2007earthquake}.
 
 To analyze the performance of the forecasts generated by the GAModel,
 the ReducedGAModel, the Emp-GAModel and finally the
-Emp-ReducedGAModel, we used the evalution method proposed
-by~\cite{schorlemmer2007earthquake} and described in
-section~\ref{eval}.
+Emp-ReducedGAModel, we perfom a simulation. All methods use the folling 
+simulation structure. First, all method evolve using a training data set,
+then the resulting forecast is analysed against a test data set.
 
-Objecting a better understand of the patterns that most influence the
+To analise the resulting forecast two evaluation methods were performed.
+ One of the method is the evaluation method proposed by~\cite{schorlemmer2007earthquake}
+ and described in Section~\ref{eval}. The other method is the Student's t-test, a statistical hypothesys test, that we use to determine if two models are significantly different from each other.
+
+The data of the JMA catalog was divided into four
+groups objecting a better understand of the patterns that most influence the
 earthquakes events and also to be able to determine the qualities of
-those forecasts, the data of the JMA catalog was divided into four
-groups. Each group constituent only of earthquakes that happened in a
+those forecasts. Each group contains only of earthquakes that happened in a
 specific time interval for a given area of Japan. The experimental
 data will be described in details subsequently.
 
@@ -583,16 +587,22 @@ place in Japan from 2000 to 2013. Each event is characterized by some
 typical earhtquake information such as magnitude, latitude, longitude,
 and depth.
 
-For the experiments we consider events with magnitude above 5.0 which
+For the experiments we consider events with magnitude above 3.0 which
 happened in four specific areas of Japan, during the year of
-2010. Those areas (Kanto, Tohoku, Kansai and East Japan) represent
+???. Those areas (Kanto, Tohoku, Kansai and East Japan) represent
 different earthquake attributes and could lead to more information
 about the power of the forecasts and/or its pitfalls. Kanto, Touhoku
 and Kansai contain mainly inland earthquakes, which are considered to
-follow more stable patterns. East Japan includes also many off-shore
-earthquakes. For more information about the four regions as well as a
-map which locates them in Japan, please refer to~\cite{ecta14}.
+follow more stable pattern. Figure~\ref{areamap} shows the locations of these four areas. East Japan includes also many off-shore earthquakes. For more information about the four regions please refer to~\cite{ecta14}.
 
+\begin{figure}
+  \begin{center}
+  \includegraphics[width=0.40\textwidth]{img/alljapan.png}
+  \end{center}
+  \caption{The relative locations of the four areas used in our
+    experiments}
+  \label{areamap}
+\end{figure}
 
 % Kanto: Kanto is the area at and nearby Tokyo. There is a large
 %amount of seismic activity in the target period. In this study, we
@@ -620,31 +630,30 @@ map which locates them in Japan, please refer to~\cite{ecta14}.
 
 \subsection{Experimental Design}
 To compare the performance of the forecast models, we execute a
-simulation experiment on ??? scenarios. Each scneario is defined by a
-region for a 1-year interval, starting in Jan/01 and endding in
+simulation experiment on ??? scenarios. Each scenario is defined by a
+region for a 1-year interval, starting in Jan/01 and ending in
 Dec/31. To build one scenario, one region is chosen from the set of
 regions (Kanto, Tohoku, East Japan and Kansai) for a determinated
-year. To train the methods, we use 5 years of prior data, for example,
-to train the 2010 1-year GAModel Kanto region, the data used is from
-the events which occurred in the years of 2006, 2007, 2008 and 2009 in
-Kanto.
+year. To train the methods, we use 5 years of prior data set. For example,
+to train the 1-year GAModel forecast model for the year of 2010 in Kanto region, the data used is from the events which occurred in the years of 2006, 2007, 2008 and 2009 in
+Kanto. This pattern is the same for all methods.
 
-To The results of the forecasts io, we used two approaches. The first
+To compare the results of the forecasts models, we used two approaches. The first
 one is based on the evaluation method proposed
 by~\cite{Schorlemmer2007} and used in~\cite{schorlemmer2010first}. As
 described in~\ref{eval}, the forecasts were first analysed using the
 L- and N- test and ??????  was chosen by the R-test as the recommended
 one.
 
-The second approach is to using the Log-likelihood values obtained by
+The second approach is to use the Log-likelihood values obtained by
 each of the forecast for each scenario. The log likelihood indicates
 how close the forecast is to the test data, in terms of location and
 quantity of earthquakes~\cite{ecta14}.
 
-All forecast models here presented are stochastic methods. Therefore,
-to be able to compare test the statistical significance of the
-results, we run each forecast model 10 times. That means that all
-results showed are the mean of these 10 executions.
+All methods presented here are stochastic methods. Therefore,
+to be able to compare and test the statistical significance of the
+results, we run each forecast model 20 times. This signifies that all
+results showed are the mean of these 20 executions.
 
 %\subsection{Parameter Tuning}
 %%All 4 algorithms were tuned using the Sequential Model- based
@@ -769,6 +778,36 @@ results showed are the mean of these 10 executions.
 %TODO: tabelas, imagens, add
 %TODO: Discussion of the results, what should i do? is it good?...?
 \section{Results}\label{Results}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.2]{img/NPKanto_2009.png}
+\caption{Reduced-Gamodel model for the year of 2009 in Kanto.}
+\label{listas-NPKanto_2009.png}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.2]{img/modelo_HybridKanto_2009.png}
+\caption{Emp-GAModel model for the year of 2009 in Kanto.}
+\label{gamodelHybridKanto_2009.png}
+\end{figure}
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.2]{img/NP_HybridKanto_2009.png}
+\caption{Emp-ReducedGAModel model for the year of 2009 in Kanto.}
+\label{listas-NPHybridKanto_2009.png}
+\end{figure}
+
+
+\begin{figure}[!htb]
+\centering
+\includegraphics[scale=0.2]{img/modeloKanto_2009.png}
+\caption{GAModel model for the year of 2009 in Kanto.}
+\label{gamodel_2009.png}
+\end{figure}
+
 
 %TODO: add future work with Gabriels
 %TODO: this section should be a revision of all

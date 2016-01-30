@@ -1,7 +1,12 @@
-This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: IEEEabrv.bib
 Database file #2: bib.bib
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
@@ -10,45 +15,45 @@ Database file #2: bib.bib
 Warning--empty journal in omori1895after
 
 Done.
-You've used 25 entries,
+You've used 22 entries,
             4039 wiz_defined-function locations,
-            1388 strings with 20460 characters,
-and the built_in function-call counts, 19563 in all, are:
-= -- 1618
-> -- 459
-< -- 177
-+ -- 244
-- -- 76
-* -- 980
-:= -- 2987
-add.period$ -- 54
-call.type$ -- 25
-change.case$ -- 27
-chr.to.int$ -- 396
-cite$ -- 26
-duplicate$ -- 1403
-empty$ -- 1515
-format.name$ -- 99
-if$ -- 4473
+            1368 strings with 19952 characters,
+and the built_in function-call counts, 17990 in all, are:
+= -- 1504
+> -- 420
+< -- 167
++ -- 226
+- -- 69
+* -- 914
+:= -- 2748
+add.period$ -- 48
+call.type$ -- 22
+change.case$ -- 24
+chr.to.int$ -- 369
+cite$ -- 23
+duplicate$ -- 1276
+empty$ -- 1366
+format.name$ -- 90
+if$ -- 4112
 int.to.chr$ -- 0
-int.to.str$ -- 25
-missing$ -- 237
-newline$ -- 106
-num.names$ -- 27
-pop$ -- 518
+int.to.str$ -- 22
+missing$ -- 215
+newline$ -- 97
+num.names$ -- 24
+pop$ -- 451
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 1497
+skip$ -- 1380
 stack$ -- 0
-substring$ -- 931
-swap$ -- 1177
-text.length$ -- 45
+substring$ -- 880
+swap$ -- 1095
+text.length$ -- 44
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 25
+type$ -- 22
 warning$ -- 1
-while$ -- 101
-width$ -- 27
-write$ -- 279
+while$ -- 93
+width$ -- 24
+write$ -- 256
 (There was 1 warning)

@@ -1,0 +1,240 @@
+com hybrid
+mu é a media do GAModel_Hybrid2006against the list_Hybrid method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = 1.5049, df = 9, p-value = 0.1666
+alternative hypothesis: true mean is not equal to -2276.589
+95 percent confidence interval:
+ -2285.165 -2233.924
+sample estimates:
+mean of x 
+-2259.544 
+
+mu é a media do GAModel_Hybrid2006against the list_Hybrid method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = 25.809, df = 9, p-value = 0.0000000009488
+alternative hypothesis: true mean is not equal to -2371.201
+95 percent confidence interval:
+ -2133.168 -2087.431
+sample estimates:
+mean of x 
+  -2110.3 
+
+mu é a media do GAModel_Hybrid2006against the list_Hybrid method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = 2.6479, df = 9, p-value = 0.02657
+alternative hypothesis: true mean is not equal to -956.2
+95 percent confidence interval:
+ -953.7233 -924.6767
+sample estimates:
+mean of x 
+   -939.2 
+
+mu é a media do GAModel_Hybrid2006against the list_Hybrid method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -9.7652, df = 9, p-value = 0.000004359
+alternative hypothesis: true mean is not equal to -1639.481
+95 percent confidence interval:
+ -1686.737 -1668.961
+sample estimates:
+mean of x 
+-1677.849 
+
+mu é a media do GAModel_Hybrid2007against the list_Hybrid method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = 5.4284, df = 9, p-value = 0.0004172
+alternative hypothesis: true mean is not equal to -2279.7
+95 percent confidence interval:
+ -2255.786 -2221.614
+sample estimates:
+mean of x 
+  -2238.7 
+
+mu é a media do GAModel_Hybrid2007against the list_Hybrid method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = 10.569, df = 9, p-value = 0.000002253
+alternative hypothesis: true mean is not equal to -2256.722
+95 percent confidence interval:
+ -2097.552 -2010.861
+sample estimates:
+mean of x 
+-2054.206 
+
+mu é a media do GAModel_Hybrid2007against the list_Hybrid method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = 2.0612, df = 9, p-value = 0.06935
+alternative hypothesis: true mean is not equal to -949.3699
+95 percent confidence interval:
+ -950.8804 -916.8788
+sample estimates:
+mean of x 
+-933.8796 
+
+mu é a media do GAModel_Hybrid2007against the list_Hybrid method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -5.824, df = 9, p-value = 0.0002518
+alternative hypothesis: true mean is not equal to -1639.875
+95 percent confidence interval:
+ -1680.919 -1657.954
+sample estimates:
+mean of x 
+-1669.436 
+
+mu é a media do GAModel_Hybrid2008against the list_Hybrid method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = 4.8229, df = 9, p-value = 0.0009431
+alternative hypothesis: true mean is not equal to -2314.941
+95 percent confidence interval:
+ -2291.884 -2251.148
+sample estimates:
+mean of x 
+-2271.516 
+
+mu é a media do GAModel_Hybrid2008against the list_Hybrid method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = 14.465, df = 9, p-value = 0.0000001546
+alternative hypothesis: true mean is not equal to -2484.629
+95 percent confidence interval:
+ -2299.545 -2230.920
+sample estimates:
+mean of x 
+-2265.232 
+
+mu é a media do GAModel_Hybrid2008against the list_Hybrid method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = -4.5019, df = 9, p-value = 0.001485
+alternative hypothesis: true mean is not equal to -925.8571
+95 percent confidence interval:
+ -1012.2581  -954.4663
+sample estimates:
+mean of x 
+-983.3622 
+
+mu é a media do GAModel_Hybrid2008against the list_Hybrid method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -16.628, df = 9, p-value = 0.00000004595
+alternative hypothesis: true mean is not equal to -1648.519
+95 percent confidence interval:
+ -1699.79 -1687.51
+sample estimates:
+mean of x 
+ -1693.65 
+
+mu é a media do GAModel_Hybrid2009against the list_Hybrid method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = 5.0858, df = 9, p-value = 0.0006576
+alternative hypothesis: true mean is not equal to -2292.801
+95 percent confidence interval:
+ -2264.708 -2219.694
+sample estimates:
+mean of x 
+-2242.201 
+
+mu é a media do GAModel_Hybrid2009against the list_Hybrid method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = 11.126, df = 9, p-value = 0.000001462
+alternative hypothesis: true mean is not equal to -2301.201
+95 percent confidence interval:
+ -2136.539 -2052.495
+sample estimates:
+mean of x 
+-2094.517 
+
+mu é a media do GAModel_Hybrid2009against the list_Hybrid method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = -1.6287, df = 9, p-value = 0.1378
+alternative hypothesis: true mean is not equal to -958.1
+95 percent confidence interval:
+ -991.7845 -952.6155
+sample estimates:
+mean of x 
+   -972.2 
+
+mu é a media do GAModel_Hybrid2009against the list_Hybrid method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -6.7562, df = 9, p-value = 0.00008307
+alternative hypothesis: true mean is not equal to -1649.371
+95 percent confidence interval:
+ -1690.287 -1669.760
+sample estimates:
+mean of x 
+-1680.023 
+
+mu é a media do GAModel_Hybrid2010against the list_Hybrid method for same year. Region: Kanto
+	One Sample t-test
+
+data:  converting(NP)
+t = 1.8074, df = 9, p-value = 0.1042
+alternative hypothesis: true mean is not equal to -2354.304
+95 percent confidence interval:
+ -2360.601 -2297.952
+sample estimates:
+mean of x 
+-2329.276 
+
+mu é a media do GAModel_Hybrid2010against the list_Hybrid method for same year. Region: EastJapan
+	One Sample t-test
+
+data:  converting(NP)
+t = 15.511, df = 9, p-value = 0.00000008432
+alternative hypothesis: true mean is not equal to -2449.806
+95 percent confidence interval:
+ -2252.799 -2185.523
+sample estimates:
+mean of x 
+-2219.161 
+
+mu é a media do GAModel_Hybrid2010against the list_Hybrid method for same year. Region: Tohoku
+	One Sample t-test
+
+data:  converting(NP)
+t = 2.9874, df = 9, p-value = 0.01527
+alternative hypothesis: true mean is not equal to -975.2814
+95 percent confidence interval:
+ -971.2605 -946.1760
+sample estimates:
+mean of x 
+-958.7182 
+
+mu é a media do GAModel_Hybrid2010against the list_Hybrid method for same year. Region: Kansai
+	One Sample t-test
+
+data:  converting(NP)
+t = -3.6884, df = 9, p-value = 0.00501
+alternative hypothesis: true mean is not equal to -1651.8
+95 percent confidence interval:
+ -1682.708 -1659.209
+sample estimates:
+mean of x 
+-1670.959 

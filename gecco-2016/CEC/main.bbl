@@ -107,20 +107,6 @@ B.~L.~N. Kennet and M.~S. Sambridge, ``Earthquake location — genetic
   algorithms for teleseisms,'' \emph{Physics of the Earth and Planetary
   Interiors}, vol.~75, no. 1--3, pp. 103--110, December 1992.
 
-\bibitem{koza2003genetic}
-J.~R. Koza, M.~A. Keane, and M.~J. Streeter, ``Genetic programming's
-  human-competitive results,'' \emph{IEEE Intelligent Systems}, pp. 25--31,
-  2003.
-
-\bibitem{Michie94machinelearning}
-D.~Michie, D.~J. Spiegelhalter, and C.~Taylor, ``Machine learning, neural and
-  statistical classification,'' 1994.
-
-\bibitem{Goldberg:1989:GAS:534133}
-D.~E. Goldberg, \emph{Genetic Algorithms in Search, Optimization and Machine
-  Learning}, 1st~ed.\hskip 1em plus 0.5em minus 0.4em\relax Boston, MA, USA:
-  Addison-Wesley Longman Publishing Co., Inc., 1989.
-
 \bibitem{zechar2010evaluating}
 J.~D. Zechar, ``Evaluating earthquake predictions and earthquake forecasts: A
   guide for students and new researchers,'' \emph{Community Online Resource for
